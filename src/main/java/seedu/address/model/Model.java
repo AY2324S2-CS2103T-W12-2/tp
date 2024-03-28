@@ -7,6 +7,7 @@ import javafx.collections.ObservableList;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.model.module.ModuleCode;
 import seedu.address.model.module.ModuleMap;
+import seedu.address.model.module.ModuleTiming;
 import seedu.address.model.student.Student;
 
 /**
@@ -111,4 +112,11 @@ public interface Model {
      * @param s Student to add module to
      */
     void deleteModuleFromStudent(ModuleCode m, Student s);
+
+    /**
+     * Adds module timing to the specified student
+     * @param t ModuleTiming to add
+     * @param s Student to add module to
+     */
+    void addModuleTimingToStudent(ModuleTiming t, Student s);
 }

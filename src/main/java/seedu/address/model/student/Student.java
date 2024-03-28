@@ -113,6 +113,16 @@ public class Student {
     }
 
     /**
+     * Add module timing to student
+     * @param t ModuleTiming to add
+     * @return true if added
+     */
+    public boolean addModuleTiming(ModuleTiming t) {
+        return moduleTimings.add(t);
+    }
+
+
+    /**
      * Returns true if both students have the same name.
      * This defines a weaker notion of equality between two students.
      */

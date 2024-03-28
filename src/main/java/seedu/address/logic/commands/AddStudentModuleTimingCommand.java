@@ -71,7 +71,7 @@ public class AddStudentModuleTimingCommand extends Command {
 
         // Some timing validation needs to go here (no duplicate timings for this module or any module ?)
 
-//        model.addModuleToStudent(moduleCode, studentToModify);
+        model.addModuleTimingToStudent(moduleTiming, studentToModify);
 
         return new CommandResult(
                 String.format(
@@ -103,6 +103,7 @@ public class AddStudentModuleTimingCommand extends Command {
         return new ToStringBuilder(this)
                 .add("student index to add module to", index)
                 .add("module to add to student", moduleCode)
+                .add("module timing to add to module", moduleTiming)
                 .toString();
     }
 }

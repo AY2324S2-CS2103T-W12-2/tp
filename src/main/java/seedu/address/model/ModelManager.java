@@ -13,6 +13,7 @@ import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.model.module.ModuleCode;
 import seedu.address.model.module.ModuleMap;
+import seedu.address.model.module.ModuleTiming;
 import seedu.address.model.student.Student;
 
 /**
@@ -153,6 +154,11 @@ public class ModelManager implements Model {
     @Override
     public void deleteModuleFromStudent(ModuleCode m, Student s) {
         addressBook.deleteModuleFromStudent(m, s);
+    }
+
+    @Override
+    public void addModuleTimingToStudent(ModuleTiming t, Student s) {
+        addressBook.addModuleTimingToStudent(t, s);
     }
 
     @Override
