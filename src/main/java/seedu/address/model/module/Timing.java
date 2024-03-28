@@ -42,6 +42,10 @@ public class Timing {
     }
 
     public String getTimingString() {
+        return this.toString();
+    }
+
+    public String toString() {
         return time.format(formatter);
     }
 }

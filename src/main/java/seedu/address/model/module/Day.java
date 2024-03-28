@@ -46,6 +46,11 @@ public class Day {
     }
 
     public String getDayString() {
+        return this.toString();
+    }
+
+    @Override
+    public String toString() {
         return day.getDisplayName(TextStyle.SHORT, Locale.ENGLISH);
     }
 }

@@ -76,7 +76,7 @@ public class AddStudentModuleTimingCommand extends Command {
         return new CommandResult(
                 String.format(
                         MESSAGE_SUCCESS,
-                        moduleCode.getCode(),
+                        Messages.format(moduleTiming),
                         Messages.format(studentToModify)
                 )
         );
