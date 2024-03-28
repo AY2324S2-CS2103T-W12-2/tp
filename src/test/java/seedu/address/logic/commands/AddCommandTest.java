@@ -24,6 +24,7 @@ import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.ReadOnlyUserPrefs;
 import seedu.address.model.module.ModuleCode;
 import seedu.address.model.module.ModuleMap;
+import seedu.address.model.module.ModuleTiming;
 import seedu.address.model.student.Student;
 import seedu.address.testutil.StudentBuilder;
 
@@ -181,6 +182,18 @@ public class AddCommandTest {
         public void deleteModuleFromStudent(ModuleCode m, Student s) {
             // TODO Auto-generated method stub
             throw new UnsupportedOperationException("Unimplemented method 'deleteModuleFromStudent'");
+        }
+
+        @Override
+        public boolean doesStudentModuleTimingClash(Student s, ModuleTiming t) {
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'doesStudentModuleTimingClash'");
+        }
+
+        @Override
+        public void addModuleTimingToStudent(ModuleTiming t, Student s) {
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'addModuleTimingToStudent'");
         }
     }
 
