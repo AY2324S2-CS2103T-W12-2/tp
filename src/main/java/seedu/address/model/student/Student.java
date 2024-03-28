@@ -95,20 +95,22 @@ public class Student {
     }
 
     /**
-     * Checks if module `m` is held within the student
-     * @param m Module to check
-     * @return true if module is taken by student
+     * Add module to student
+     * @param m ModuleCode to add
+     * @return true if added
      */
     public boolean addModule(ModuleCode m) {
         return modules.add(m);
     }
 
     /**
-     * Checks if module `m` is held within the student
-     * @param m Module to check
-     * @return true if module is taken by student
+     * Remove module from student
+     * @param m ModuleCode to remove
+     * @return true if removed
      */
     public boolean deleteModule(ModuleCode m) {
+        // Cascade delete related module timings
+        moduleTimings.removeIf(moduleTiming -> moduleTiming.getModuleCode().equals(m));
         return modules.remove(m);
     }
 
@@ -119,6 +121,15 @@ public class Student {
      */
     public boolean addModuleTiming(ModuleTiming t) {
         return moduleTimings.add(t);
+    }
+
+    /**
+     * Remove module timing from student
+     * @param t ModuleTiming to remove
+     * @return true if removed
+     */
+    public boolean deleteModuleTiming(ModuleTiming t) {
+        return moduleTimings.remove(t);
     }
 
 
