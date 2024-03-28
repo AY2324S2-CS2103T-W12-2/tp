@@ -1,5 +1,8 @@
 package seedu.address.model.module;
 
+import java.time.LocalTime;
+import java.time.format.DateTimeParseException;
+
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
 /**
@@ -8,6 +11,7 @@ import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
  * immutable.
  */
 public class ModuleTiming {
+    public static final String MESSAGE_CONSTRAINTS = "End time should be larger than Start time";
     private final ModuleCode moduleCode;
     private final Day day;
     private final Timing startTime;
@@ -42,6 +46,13 @@ public class ModuleTiming {
 
     public Timing getEndTime() {
         return endTime;
+    }
+
+    /**
+     * Returns true if the start time < end time.
+     */
+    public static boolean isValidModuleTiming(Timing startTime, Timing endTime) {
+        return startTime.compareTo(endTime) < 0;
     }
 
     /**

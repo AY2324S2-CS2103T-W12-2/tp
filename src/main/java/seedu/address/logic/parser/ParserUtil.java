@@ -11,6 +11,7 @@ import seedu.address.commons.util.StringUtil;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.module.Day;
 import seedu.address.model.module.ModuleCode;
+import seedu.address.model.module.ModuleTiming;
 import seedu.address.model.module.Timing;
 import seedu.address.model.student.Address;
 import seedu.address.model.student.Email;
@@ -145,5 +146,17 @@ public class ParserUtil {
             throw new ParseException(Timing.MESSAGE_CONSTRAINTS);
         }
         return new Timing(timing);
+    }
+
+    public static ModuleTiming parseModuleTiming(
+            ModuleCode moduleCode, Day day, Timing startTime, Timing endTime) throws ParseException {
+        requireNonNull(moduleCode);
+        requireNonNull(day);
+        requireNonNull(startTime);
+        requireNonNull(endTime);
+        if (!ModuleTiming.isValidModuleTiming(startTime, endTime)) {
+            throw new ParseException(ModuleTiming.MESSAGE_CONSTRAINTS);
+        }
+        return new ModuleTiming(moduleCode, day, startTime, endTime);
     }
 }

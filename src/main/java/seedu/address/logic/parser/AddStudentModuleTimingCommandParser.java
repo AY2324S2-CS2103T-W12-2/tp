@@ -41,7 +41,7 @@ public class AddStudentModuleTimingCommandParser implements Parser<AddStudentMod
         Timing startTime = ParserUtil.parseTiming(argMultimap.getValue(PREFIX_START_TIME).get());
         Timing endTime = ParserUtil.parseTiming(argMultimap.getValue(PREFIX_END_TIME).get());
 
-        ModuleTiming moduleTiming = new ModuleTiming(moduleCode, day, startTime, endTime);
+        ModuleTiming moduleTiming = ParserUtil.parseModuleTiming(moduleCode, day, startTime, endTime);
 
         return new AddStudentModuleTimingCommand(index, moduleCode, moduleTiming);
     }
