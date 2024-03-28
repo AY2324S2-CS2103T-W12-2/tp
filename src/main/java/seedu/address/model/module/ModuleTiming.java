@@ -43,4 +43,16 @@ public class ModuleTiming {
     public Timing getEndTime() {
         return endTime;
     }
+
+    /**
+     * Returns true if timing clashes.
+     */
+    public boolean doesModuleTimingClash(ModuleTiming otherTiming) {
+        if (!day.equals(otherTiming.day)) {
+            return false;
+        }
+
+        // check if there is overlap in timings
+        return endTime.compareTo(otherTiming.startTime) > 0 && startTime.compareTo(otherTiming.endTime) < 0;
+    }
 }

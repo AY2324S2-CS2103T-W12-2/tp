@@ -114,6 +114,14 @@ public interface Model {
     void deleteModuleFromStudent(ModuleCode m, Student s);
 
     /**
+     * Checks if student `s` has moduleCode `m`
+     * @param s Student
+     * @param m Module
+     * @return Whether student has that module or not
+     */
+    boolean doesStudentModuleTimingClash(Student s, ModuleTiming t);
+
+    /**
      * Adds module timing to the specified student
      * @param t ModuleTiming to add
      * @param s Student to add module to

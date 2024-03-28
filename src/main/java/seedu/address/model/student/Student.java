@@ -115,6 +115,21 @@ public class Student {
     }
 
     /**
+     * Checks if module timing `t` clashes with the students current module timings
+     * @param t ModuleTiming to check
+     * @return true if module timing clashes
+     */
+    public boolean doesModuleTimingClash(ModuleTiming t) {
+        for (ModuleTiming currentModuleTiming : moduleTimings) {
+            if (t.doesModuleTimingClash(currentModuleTiming)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
      * Add module timing to student
      * @param t ModuleTiming to add
      * @return true if added

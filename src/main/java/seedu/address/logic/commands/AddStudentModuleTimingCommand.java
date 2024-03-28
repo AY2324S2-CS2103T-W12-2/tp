@@ -37,6 +37,8 @@ public class AddStudentModuleTimingCommand extends Command {
     public static final String MESSAGE_SUCCESS = "New module timing %1$s added to student: %2$s";
     public static final String MESSAGE_MODULE_NOT_FOUND =
             "This module does not exist in the student's contact in address book";
+    public static final String MESSAGE_MODULE_TIMING_CLASH =
+            "There is a clash in module timings";
 
     private final Index index;
     private final ModuleCode moduleCode;
@@ -69,7 +71,9 @@ public class AddStudentModuleTimingCommand extends Command {
             throw new CommandException(MESSAGE_MODULE_NOT_FOUND);
         }
 
-        // Some timing validation needs to go here (no duplicate timings for this module or any module ?)
+        if (model.doesStudentModuleTimingClash(studentToModify, moduleTiming)) {
+            throw new CommandException(MESSAGE_MODULE_TIMING_CLASH);
+        }
 
         model.addModuleTimingToStudent(moduleTiming, studentToModify);
 

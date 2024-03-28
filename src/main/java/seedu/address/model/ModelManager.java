@@ -157,6 +157,11 @@ public class ModelManager implements Model {
     }
 
     @Override
+    public boolean doesStudentModuleTimingClash(Student s, ModuleTiming t) {
+        return s.doesModuleTimingClash(t);
+    }
+
+    @Override
     public void addModuleTimingToStudent(ModuleTiming t, Student s) {
         addressBook.addModuleTimingToStudent(t, s);
     }

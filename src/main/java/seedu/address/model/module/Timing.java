@@ -41,6 +41,10 @@ public class Timing {
         return true;
     }
 
+    public int compareTo(Timing otherTiming) {
+        return time.compareTo(otherTiming.time);
+    }
+
     public String getTimingString() {
         return this.toString();
     }
