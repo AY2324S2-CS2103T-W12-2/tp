@@ -130,24 +130,43 @@ public class ParserUtil {
         return new ModuleCode(s);
     }
 
+    /**
+     * Parses a {@code String day} into an {@code Day}.
+     * Leading and trailing whitespaces will be trimmed.
+     *
+     * @throws ParseException if the given {@code day} is invalid.
+     */
     public static Day parseDay(String day) throws ParseException {
         requireNonNull(day);
         String trimmedDay = day.trim();
-        if (!Day.isValidDay(day)) {
+        if (!Day.isValidDay(trimmedDay)) {
             throw new ParseException(Day.MESSAGE_CONSTRAINTS);
         }
-        return new Day(day);
+        return new Day(trimmedDay);
     }
 
+    /**
+     * Parses a {@code String timing} into an {@code Timing}.
+     * Leading and trailing whitespaces will be trimmed.
+     *
+     * @throws ParseException if the given {@code timing} is invalid.
+     */
     public static Timing parseTiming(String timing) throws ParseException {
         requireNonNull(timing);
         String trimmedTiming = timing.trim();
         if (!Timing.isValidTime(trimmedTiming)) {
             throw new ParseException(Timing.MESSAGE_CONSTRAINTS);
         }
-        return new Timing(timing);
+        return new Timing(trimmedTiming);
     }
 
+    /**
+     * Parses a {@code ModuleCode moduleCode}, {@code Day day}, {@code Timing startTime}, {@code Timing endTime}
+     * into an {@code ModuleTiming}.
+     * Also validates that start time < end time.
+     *
+     * @throws ParseException if the given {@code email} is invalid.
+     */
     public static ModuleTiming parseModuleTiming(
             ModuleCode moduleCode, Day day, Timing startTime, Timing endTime) throws ParseException {
         requireNonNull(moduleCode);

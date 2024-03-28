@@ -1,8 +1,5 @@
 package seedu.address.model.module;
 
-import java.time.LocalTime;
-import java.time.format.DateTimeParseException;
-
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
 /**

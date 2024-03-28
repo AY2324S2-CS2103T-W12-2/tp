@@ -114,10 +114,10 @@ public interface Model {
     void deleteModuleFromStudent(ModuleCode m, Student s);
 
     /**
-     * Checks if student `s` has moduleCode `m`
+     * Checks if student `s` has clashes with moduleTiming `t`
      * @param s Student
-     * @param m Module
-     * @return Whether student has that module or not
+     * @param t ModuleTiming
+     * @return Whether student has clash with `t`
      */
     boolean doesStudentModuleTimingClash(Student s, ModuleTiming t);
 
