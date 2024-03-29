@@ -3,22 +3,30 @@ layout: page
 title: Developer Guide
 ---
 * Table of Contents
-{:toc}
+- [Acknowledgements](#acknowledgements)
+- [Setting Up](#setting-up)
+- [Design](#design)
+- [Implementation](#implementation)
+- [Misc. Docs](#misc-documentation)
+- [Appendix](#appendix)
 
 --------------------------------------------------------------------------------------------------------------------
 
+<a id="acknowledgements"></a>
 ## **Acknowledgements**
 
 * {list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well}
 
 --------------------------------------------------------------------------------------------------------------------
 
+<a id="setting-up"></a>
 ## **Setting up, getting started**
 
 Refer to the guide [_Setting up and getting started_](SettingUp.md).
 
 --------------------------------------------------------------------------------------------------------------------
 
+<a id="design"></a>
 ## **Design**
 
 <div markdown="span" class="alert alert-primary">
@@ -150,7 +158,7 @@ The `Storage` component,
 Classes used by multiple components are in the `seedu.addressbook.commons` package.
 
 --------------------------------------------------------------------------------------------------------------------
-
+<a id="implementation"></a>
 ## **Implementation**
 
 This section describes some noteworthy details on how certain features are implemented.
@@ -246,6 +254,7 @@ _{Explain here how the data archiving feature will be implemented}_
 
 --------------------------------------------------------------------------------------------------------------------
 
+<a id="misc-documentation"></a>
 ## **Documentation, logging, testing, configuration, dev-ops**
 
 * [Documentation guide](Documentation.md)
@@ -256,6 +265,7 @@ _{Explain here how the data archiving feature will be implemented}_
 
 --------------------------------------------------------------------------------------------------------------------
 
+<a id="appendix"></a>
 ## **Appendix: Requirements**
 
 ### Product scope
