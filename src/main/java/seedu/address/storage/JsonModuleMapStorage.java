@@ -26,11 +26,6 @@ public class JsonModuleMapStorage implements ModuleMapStorage {
     public JsonModuleMapStorage() {}
 
     @Override
-    public Path getModuleFilePath() {
-        return null;
-    }
-
-    @Override
     public ModuleMap readModuleMap() {
         requireNonNull(filePath);
 

@@ -31,9 +31,6 @@ public interface Storage extends AddressBookStorage, UserPrefsStorage, ModuleMap
     void saveAddressBook(ReadOnlyAddressBook addressBook) throws IOException;
 
     @Override
-    Path getModuleFilePath();
-
-    @Override
     ModuleMap readModuleMap();
 
 }

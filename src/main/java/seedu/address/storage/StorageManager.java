@@ -83,13 +83,8 @@ public class StorageManager implements Storage {
     }
 
     @Override
-    public Path getModuleFilePath() {
-        return moduleMapStorage.getModuleFilePath();
-    }
-
-    @Override
     public ModuleMap readModuleMap() {
-        logger.fine("Attempting to read data from file: " + moduleMapStorage.getModuleFilePath());
+        logger.fine("Attempting to read data from module map");
         return moduleMapStorage.readModuleMap();
     }
 }
