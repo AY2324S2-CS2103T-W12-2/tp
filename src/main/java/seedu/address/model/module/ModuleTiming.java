@@ -8,6 +8,7 @@ import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
  * immutable.
  */
 public class ModuleTiming {
+    public static final String MESSAGE_CONSTRAINTS = "End time should be larger than Start time";
     private final ModuleCode moduleCode;
     private final Day day;
     private final Timing startTime;
@@ -42,5 +43,24 @@ public class ModuleTiming {
 
     public Timing getEndTime() {
         return endTime;
+    }
+
+    /**
+     * Returns true if the start time < end time.
+     */
+    public static boolean isValidModuleTiming(Timing startTime, Timing endTime) {
+        return startTime.compareTo(endTime) < 0;
+    }
+
+    /**
+     * Returns true if timing clashes.
+     */
+    public boolean doesModuleTimingClash(ModuleTiming otherTiming) {
+        if (!day.equals(otherTiming.day)) {
+            return false;
+        }
+
+        // check if there is overlap in timings
+        return endTime.compareTo(otherTiming.startTime) > 0 && startTime.compareTo(otherTiming.endTime) < 0;
     }
 }

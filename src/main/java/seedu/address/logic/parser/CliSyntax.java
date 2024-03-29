@@ -16,4 +16,10 @@ public class CliSyntax {
 
     public static final Prefix PREFIX_STUDENT_ID = new Prefix("i/");
 
+    public static final Prefix PREFIX_DAY = new Prefix("d/");
+
+    public static final Prefix PREFIX_START_TIME = new Prefix("st/");
+
+    public static final Prefix PREFIX_END_TIME = new Prefix("et/");
+
 }

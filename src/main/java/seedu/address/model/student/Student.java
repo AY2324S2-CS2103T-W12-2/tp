@@ -95,22 +95,58 @@ public class Student {
     }
 
     /**
-     * Checks if module `m` is held within the student
-     * @param m Module to check
-     * @return true if module is taken by student
+     * Add module to student
+     * @param m ModuleCode to add
+     * @return true if added
      */
     public boolean addModule(ModuleCode m) {
         return modules.add(m);
     }
 
     /**
-     * Checks if module `m` is held within the student
-     * @param m Module to check
-     * @return true if module is taken by student
+     * Remove module from student
+     * @param m ModuleCode to remove
+     * @return true if removed
      */
     public boolean deleteModule(ModuleCode m) {
+        // Cascade delete related module timings
+        moduleTimings.removeIf(moduleTiming -> moduleTiming.getModuleCode().equals(m));
         return modules.remove(m);
     }
+
+    /**
+     * Checks if module timing `t` clashes with the students current module timings
+     * @param t ModuleTiming to check
+     * @return true if module timing clashes
+     */
+    public boolean doesModuleTimingClash(ModuleTiming t) {
+        for (ModuleTiming currentModuleTiming : moduleTimings) {
+            if (t.doesModuleTimingClash(currentModuleTiming)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Add module timing to student
+     * @param t ModuleTiming to add
+     * @return true if added
+     */
+    public boolean addModuleTiming(ModuleTiming t) {
+        return moduleTimings.add(t);
+    }
+
+    /**
+     * Remove module timing from student
+     * @param t ModuleTiming to remove
+     * @return true if removed
+     */
+    public boolean deleteModuleTiming(ModuleTiming t) {
+        return moduleTimings.remove(t);
+    }
+
 
     /**
      * Returns true if both students have the same name.

@@ -7,6 +7,7 @@ import java.util.List;
 import javafx.collections.ObservableList;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.model.module.ModuleCode;
+import seedu.address.model.module.ModuleTiming;
 import seedu.address.model.student.Student;
 import seedu.address.model.student.UniqueStudentList;
 
@@ -128,6 +129,25 @@ public class AddressBook implements ReadOnlyAddressBook {
             if (candidate.equals(s) && candidate.hasModule(m)) {
                 Student editedStudent = candidate.copy();
                 editedStudent.deleteModule(m);
+                students.setStudent(candidate, editedStudent);
+                return;
+            }
+        }
+    }
+
+    /**
+     * Adds a module timing to a student in the address book.
+     *
+     * @param t The module timing to be added.
+     * @param s The student to whom the module is to be added.
+     */
+    public void addModuleTimingToStudent(ModuleTiming t, Student s) {
+        requireNonNull(t);
+        requireNonNull(s);
+        for (Student candidate : students) {
+            if (candidate.equals(s) && candidate.hasModule(t.getModuleCode())) {
+                Student editedStudent = candidate.copy();
+                editedStudent.addModuleTiming(t);
                 students.setStudent(candidate, editedStudent);
                 return;
             }

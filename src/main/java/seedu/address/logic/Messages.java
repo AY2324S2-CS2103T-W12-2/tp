@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import seedu.address.logic.parser.Prefix;
+import seedu.address.model.module.ModuleTiming;
 import seedu.address.model.student.Student;
 
 /**
@@ -45,6 +46,21 @@ public class Messages {
                 .append(student.getAddress())
                 .append("; Tags: ");
         student.getTags().forEach(builder::append);
+        return builder.toString();
+    }
+
+    /**
+     * Formats the {@code moduleTiming} for display to the user.
+     */
+    public static String format(ModuleTiming moduleTiming) {
+        final StringBuilder builder = new StringBuilder();
+        builder.append(moduleTiming.getModuleCode())
+                .append("; Day: ")
+                .append(moduleTiming.getDay())
+                .append("; Timing: ")
+                .append(moduleTiming.getStartTime())
+                .append("-")
+                .append(moduleTiming.getEndTime());
         return builder.toString();
     }
 }
