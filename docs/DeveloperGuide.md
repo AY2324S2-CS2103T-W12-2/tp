@@ -3,22 +3,30 @@ layout: page
 title: Developer Guide
 ---
 * Table of Contents
-{:toc}
+- [Acknowledgements](#acknowledgements)
+- [Setting Up](#setting-up)
+- [Design](#design)
+- [Implementation](#implementation)
+- [Misc. Docs](#misc-documentation)
+- [Appendix](#appendix)
 
 --------------------------------------------------------------------------------------------------------------------
 
+<a id="acknowledgements"></a>
 ## **Acknowledgements**
 
 * {list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well}
 
 --------------------------------------------------------------------------------------------------------------------
 
+<a id="setting-up"></a>
 ## **Setting up, getting started**
 
 Refer to the guide [_Setting up and getting started_](SettingUp.md).
 
 --------------------------------------------------------------------------------------------------------------------
 
+<a id="design"></a>
 ## **Design**
 
 <div markdown="span" class="alert alert-primary">
@@ -150,7 +158,7 @@ The `Storage` component,
 Classes used by multiple components are in the `seedu.addressbook.commons` package.
 
 --------------------------------------------------------------------------------------------------------------------
-
+<a id="implementation"></a>
 ## **Implementation**
 
 This section describes some noteworthy details on how certain features are implemented.
@@ -243,9 +251,23 @@ _{more aspects and alternatives to be added}_
 
 _{Explain here how the data archiving feature will be implemented}_
 
+### Handling of Modules
+#### Proposed Implementation
+The implementation is facilitated by the `JsonModuleMapStorage`. This implements the `ModuleMapStorage`, an interface which defines functions to retrieve the module map from storage into Memory. 
+- `JsonModuleMapStorage#readModuleMap`
+
+This operation is exposed in Storage as `ReadModuleMap`, which allows the `ModelManager` to populate its `ModuleMap` with data from the embedded file. 
+With the model manager having the ModuleMap, this can now be accessed by the `Commands` in the `logic` package. 
+
+### Handling of Student Module Allocation
+#### Proposed Implementation
+Details of Modules are stored separately in a `JSON` file. The concept of ModContacts requires us to assign module information to students as a way to indicate that the students are taking up those modules.
+
+As a result, the module code of a module is stored along with the student information instead of the whole module (i.e Module Title, Module Description, etc.). It was done this way to reduce redundancy between information and not to overcomplicate things. If were to include the whole module information within each student, then a change in the details of a mod would have required multiple changes across the students.
 
 --------------------------------------------------------------------------------------------------------------------
 
+<a id="misc-documentation"></a>
 ## **Documentation, logging, testing, configuration, dev-ops**
 
 * [Documentation guide](Documentation.md)
@@ -256,6 +278,7 @@ _{Explain here how the data archiving feature will be implemented}_
 
 --------------------------------------------------------------------------------------------------------------------
 
+<a id="appendix"></a>
 ## **Appendix: Requirements**
 
 ### Product scope
