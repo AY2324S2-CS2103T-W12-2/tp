@@ -259,6 +259,12 @@ The implementation is facilitated by the `JsonModuleMapStorage`. This implements
 This operation is exposed in Storage as `ReadModuleMap`, which allows the `ModelManager` to populate its `ModuleMap` with data from the embedded file. 
 With the model manager having the ModuleMap, this can now be accessed by the `Commands` in the `logic` package. 
 
+### Handling of Student Module Allocation
+#### Proposed Implementation
+Details of Modules are stored separately in a `JSON` file. The concept of ModContacts requires us to assign module information to students as a way to indicate that the students are taking up those modules.
+
+As a result, the module code of a module is stored along with the student information instead of the whole module (i.e Module Title, Module Description, etc.). It was done this way to reduce redundancy between information and not to overcomplicate things. If were to include the whole module information within each student, then a change in the details of a mod would have required multiple changes across the students.
+
 --------------------------------------------------------------------------------------------------------------------
 
 <a id="misc-documentation"></a>
