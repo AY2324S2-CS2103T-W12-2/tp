@@ -251,6 +251,13 @@ _{more aspects and alternatives to be added}_
 
 _{Explain here how the data archiving feature will be implemented}_
 
+### Handling of Modules
+#### Proposed Implementation
+The implementation is facilitated by the `JsonModuleMapStorage`. This implements the `ModuleMapStorage`, an interface which defines functions to retrieve the module map from storage into Memory. 
+- `JsonModuleMapStorage#readModuleMap`
+
+This operation is exposed in Storage as `ReadModuleMap`, which allows the `ModelManager` to populate its `ModuleMap` with data from the embedded file. 
+With the model manager having the ModuleMap, this can now be accessed by the `Commands` in the `logic` package. 
 
 --------------------------------------------------------------------------------------------------------------------
 
