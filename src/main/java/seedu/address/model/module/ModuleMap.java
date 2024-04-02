@@ -1,6 +1,8 @@
 package seedu.address.model.module;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Wrapper for a hashmap that stores all Module objects
@@ -21,5 +23,15 @@ public class ModuleMap {
     }
     public Module getModule(ModuleCode code) {
         return moduleMap.get(code);
+    }
+
+    public List<Module> getModulesByPrefix(String prefix) {
+        List<Module> modules = new ArrayList<>();
+        for (Module module : moduleMap.values()) {
+            if (module.getModuleCode().getCode().startsWith(prefix)) {
+                modules.add(module);
+            }
+        }
+        return modules;
     }
 }
