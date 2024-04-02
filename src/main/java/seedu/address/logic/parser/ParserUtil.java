@@ -126,8 +126,19 @@ public class ParserUtil {
         return tagSet;
     }
 
-    public static ModuleCode parseModule(String s) {
-        return new ModuleCode(s);
+    /**
+     * Parses a {@code String moduleCode} into an {@code ModuleCode}.
+     * Leading and trailing whitespaces will be trimmed.
+     *
+     * @throws ParseException if the given {@code moduleCode} is invalid.
+     */
+    public static ModuleCode parseModule(String moduleCode) throws ParseException {
+        requireNonNull(moduleCode);
+        String trimmedModuleCode = moduleCode.trim();
+        if (!ModuleCode.isValidCode(trimmedModuleCode)) {
+            throw new ParseException(String.format(ModuleCode.MESSAGE_CONSTRAINTS, trimmedModuleCode));
+        }
+        return new ModuleCode(trimmedModuleCode);
     }
 
     /**
