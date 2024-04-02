@@ -49,6 +49,19 @@ public class StringUtil {
     }
 
     /**
+     * Truncates the string {@code s} to the specified {@code length}.
+     * If the length of {@code s} is less than or equal to {@code length}, returns {@code s}.
+     * Otherwise, returns a truncated string of length {@code length} with "..." appended at the end.
+     */
+
+    public static String truncate(String s, int length) {
+        if (s.length() <= length) {
+            return s;
+        }
+        return s.substring(0, length - 3) + "...";
+    }
+
+    /**
      * Returns true if {@code s} represents a non-zero unsigned integer
      * e.g. 1, 2, 3, ..., {@code Integer.MAX_VALUE} <br>
      * Will return false for any other non-null string input
