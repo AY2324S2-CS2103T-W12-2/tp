@@ -13,7 +13,7 @@ import seedu.address.model.Model;
 import seedu.address.model.module.Module;
 /** Lists all modules in the address book. */
 public class ListModulesCommand extends Command {
-    public static final String COMMAND_WORD = "listModules";
+    public static final String COMMAND_WORD = "list_modules";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": List all modules in the address book."
             + "Parameters: "
@@ -30,10 +30,13 @@ public class ListModulesCommand extends Command {
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
-        List<Module> module = model.getModuleMap().getModulesByPrefix(this.modulePrefix);
+        List<Module> modules = model.getModuleMap().getModulesByPrefix(this.modulePrefix);
+        if (modules.size() == 0) {
+            return new CommandResult("No modules found with prefix " + this.modulePrefix);
+        }
         StringBuilder sb = new StringBuilder();
-        sb.append("Listed of modules with prefix: ").append(this.modulePrefix).append("\n");
-        for (Module m : module) {
+        sb.append("List of modules with prefix: ").append(this.modulePrefix).append("\n");
+        for (Module m : modules) {
             sb.append(m.getModuleCode().getCode()).append(" : ");
             sb.append(StringUtil.truncate(m.getDescription().getValue(), 80)).append("\n");
         }
