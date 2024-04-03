@@ -63,4 +63,9 @@ public class ModuleTiming {
         // check if there is overlap in timings
         return endTime.compareTo(otherTiming.startTime) > 0 && startTime.compareTo(otherTiming.endTime) < 0;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s %s-%s", day.toString(), startTime.toString(), endTime.toString());
+    }
 }

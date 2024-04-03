@@ -1,13 +1,13 @@
 package seedu.address.ui;
 
-import java.util.Comparator;
+import java.util.stream.Collectors;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import seedu.address.model.module.ModuleCode;
+import seedu.address.model.module.ModuleTiming;
 import seedu.address.model.student.Student;
 
 /**
@@ -36,11 +36,7 @@ public class StudentCard extends UiPart<Region> {
     @FXML
     private Label phone;
     @FXML
-    private Label address;
-    @FXML
-    private Label email;
-    @FXML
-    private FlowPane modules;
+    private Label modules;
 
     /**
      * Creates a {@code StudentCode} with the given {@code Student} and index to display.
@@ -51,10 +47,16 @@ public class StudentCard extends UiPart<Region> {
         id.setText(displayedIndex + ". ");
         name.setText(student.getName().fullName);
         phone.setText(student.getPhone().value);
-        address.setText(student.getAddress().value);
-        email.setText(student.getEmail().value);
-        student.getModules().stream()
-                .sorted(Comparator.comparing(ModuleCode::getCode))
-                .forEach(module -> modules.getChildren().add(new Label(module.getCode())));
+
+        StringBuilder sb = new StringBuilder();
+        for (ModuleCode moduleCode : student.getModules()) {
+            String timings = student.getModuleTimings().stream()
+                    .filter(moduleTiming -> moduleTiming.getModuleCode().equals(moduleCode))
+                    .map(ModuleTiming::toString)
+                    .collect(Collectors.joining(", "));
+            sb.append(moduleCode.toString());
+            sb.append(timings.isEmpty() ? "\n" : ": " + timings + "\n");
+        }
+        modules.setText(sb.toString());
     }
 }
