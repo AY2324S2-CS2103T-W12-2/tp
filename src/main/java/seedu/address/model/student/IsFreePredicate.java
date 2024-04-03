@@ -20,7 +20,7 @@ public class IsFreePredicate implements Predicate<Student> {
 
     @Override
     public boolean test(Student student) {
-        return !student.getModuleTimings()
+        return student.getModuleTimings()
                 .stream()
                 .noneMatch(
                         moduleTiming -> startTime.compareTo(moduleTiming.getEndTime()) == -1 && endTime.compareTo(moduleTiming.getStartTime()) == 1
