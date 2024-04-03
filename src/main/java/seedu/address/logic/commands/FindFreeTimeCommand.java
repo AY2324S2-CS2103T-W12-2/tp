@@ -19,8 +19,7 @@ public class FindFreeTimeCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Finds all students who are free in the time–range specified"
             + "and displays them as a list with index numbers.\n"
-            + "Parameters: KEYWORD [MORE_KEYWORDS]...\n"
-            + "Example: " + COMMAND_WORD + PREFIX_START_TIME + "0230" + PREFIX_END_TIME + "0330";
+            + "Example: " + COMMAND_WORD + ' ' + PREFIX_START_TIME + "0230" + ' ' + PREFIX_END_TIME + "0330";
 
     private final IsFreePredicate predicate;
 
