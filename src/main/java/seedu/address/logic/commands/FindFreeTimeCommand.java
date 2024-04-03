@@ -1,8 +1,7 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_END_TIME;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_START_TIME;
+import static seedu.address.logic.parser.CliSyntax.*;
 
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
@@ -19,7 +18,8 @@ public class FindFreeTimeCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Finds all students who are free in the time–range specified"
             + "and displays them as a list with index numbers.\n"
-            + "Example: " + COMMAND_WORD + ' ' + PREFIX_START_TIME + "0230" + ' ' + PREFIX_END_TIME + "0330";
+            + "Example: " + COMMAND_WORD + " " + PREFIX_START_TIME + "0230" + " " + PREFIX_END_TIME + "0330"
+            + " " + PREFIX_DAY + "Wed";
 
     private final IsFreePredicate predicate;
 

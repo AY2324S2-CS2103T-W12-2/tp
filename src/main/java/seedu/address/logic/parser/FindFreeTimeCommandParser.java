@@ -1,13 +1,13 @@
 package seedu.address.logic.parser;
 
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_END_TIME;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_START_TIME;
+import static seedu.address.logic.parser.CliSyntax.*;
 
 import java.util.stream.Stream;
 
 import seedu.address.logic.commands.FindFreeTimeCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
+import seedu.address.model.module.Day;
 import seedu.address.model.module.Timing;
 import seedu.address.model.student.IsFreePredicate;
 
@@ -24,19 +24,20 @@ public class FindFreeTimeCommandParser implements Parser<FindFreeTimeCommand> {
     public FindFreeTimeCommand parse(String args) throws ParseException {
         ArgumentMultimap argMultimap =
                 ArgumentTokenizer.tokenize(
-                        args, PREFIX_START_TIME, PREFIX_END_TIME);
+                        args, PREFIX_START_TIME, PREFIX_END_TIME, PREFIX_DAY);
         if (!arePrefixesPresent(
-                argMultimap, PREFIX_START_TIME, PREFIX_END_TIME)
+                argMultimap, PREFIX_START_TIME, PREFIX_END_TIME, PREFIX_DAY)
                 || !argMultimap.getPreamble().isEmpty()) {
             throw new ParseException(
                 String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindFreeTimeCommand.MESSAGE_USAGE));
         }
 
-        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_START_TIME, PREFIX_END_TIME);
+        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_START_TIME, PREFIX_END_TIME, PREFIX_DAY);
         Timing startTime = ParserUtil.parseTiming(argMultimap.getValue(PREFIX_START_TIME).get());
         Timing endTime = ParserUtil.parseTiming(argMultimap.getValue(PREFIX_END_TIME).get());
+        Day day = ParserUtil.parseDay((argMultimap.getValue(PREFIX_DAY)).get());
 
-        return new FindFreeTimeCommand(new IsFreePredicate(startTime, endTime));
+        return new FindFreeTimeCommand(new IsFreePredicate(startTime, endTime, day));
     }
 
     /**
