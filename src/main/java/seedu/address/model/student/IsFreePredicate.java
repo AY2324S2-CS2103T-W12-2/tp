@@ -1,18 +1,22 @@
 package seedu.address.model.student;
 
-import seedu.address.commons.util.StringUtil;
+import java.util.function.Predicate;
+
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.model.module.Timing;
-
-import java.util.List;
-import java.util.function.Predicate;
 
 /**
  * Tests that a {@code Student} is free between a given timing
  */
 public class IsFreePredicate implements Predicate<Student> {
-    private final Timing startTime, endTime;
+    private final Timing startTime;
+    private final Timing endTime;
 
+    /**
+     * Constructor to create a predicate
+     * @param startTime starting time of range
+     * @param endTime ending time of range
+     */
     public IsFreePredicate(Timing startTime, Timing endTime) {
         this.startTime = startTime;
         this.endTime = endTime;
@@ -23,7 +27,9 @@ public class IsFreePredicate implements Predicate<Student> {
         return student.getModuleTimings()
                 .stream()
                 .noneMatch(
-                        moduleTiming -> startTime.compareTo(moduleTiming.getEndTime()) == -1 && endTime.compareTo(moduleTiming.getStartTime()) == 1
+                        moduleTiming ->
+                                startTime.compareTo(moduleTiming.getEndTime()) == -1
+                                && endTime.compareTo(moduleTiming.getStartTime()) == 1
                 );
     }
 
