@@ -1,7 +1,5 @@
 package seedu.address.model.module;
 
-import seedu.address.logic.parser.ParserUtil;
-
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
 /**
