@@ -10,6 +10,7 @@ Hello NUS School of Computing (SoC) students! Welcome to the User Guide for **Mo
 contact with them amidst your journey in NUS!
 
 # Table of Contents
+* TOC
 {:toc}
 
 --------------------------------------------------------------------------------------------------------------------
