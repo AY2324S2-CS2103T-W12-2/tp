@@ -146,7 +146,7 @@ public class EditCommand extends Command {
         private Address address;
         private Set<Tag> tags;
 
-        private List<ModuleCode> modules = new ArrayList<>();
+        private List<ModuleCode> modules;
 
         private List<ModuleTiming> moduleTimings = new ArrayList<>();
 
@@ -167,7 +167,7 @@ public class EditCommand extends Command {
         }
 
         public void setModules(List<ModuleCode> modules) {
-            this.modules = new ArrayList<>(modules);
+            this.modules = (modules != null) ? new ArrayList<>(modules) : null;
         }
 
         public void setModuleTimings(List<ModuleTiming> modules) {

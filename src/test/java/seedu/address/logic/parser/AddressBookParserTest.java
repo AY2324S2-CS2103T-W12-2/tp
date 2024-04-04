@@ -57,6 +57,9 @@ public class AddressBookParserTest {
     public void parseCommand_edit() throws Exception {
         Student student = new StudentBuilder().build();
         EditStudentDescriptor descriptor = new EditStudentDescriptorBuilder(student).build();
+        // (taufiq): I have to set this to null because we need to differentiate
+        // between presence/absence of module input
+        descriptor.setModules(null);
         EditCommand command = (EditCommand) parser.parseCommand(EditCommand.COMMAND_WORD + " "
                 + INDEX_FIRST_STUDENT.getOneBased() + " " + StudentUtil.getEditStudentDescriptorDetails(descriptor));
         assertEquals(new EditCommand(INDEX_FIRST_STUDENT, descriptor), command);
