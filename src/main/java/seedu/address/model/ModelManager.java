@@ -188,4 +188,9 @@ public class ModelManager implements Model {
                 && filteredStudents.equals(otherModelManager.filteredStudents);
     }
 
+    @Override
+    public boolean doesStudentModuleTimingExist(Student s, ModuleTiming t) {
+        return s.hasModuleTiming(t);
+    }
+
 }

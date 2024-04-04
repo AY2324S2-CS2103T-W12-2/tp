@@ -18,6 +18,9 @@ import seedu.address.model.module.ModuleCode;
 import seedu.address.model.module.ModuleTiming;
 import seedu.address.model.student.Student;
 
+/**
+ * Represents a command to delete a module timing from the module of a student in the address book.
+ */
 public class DeleteStudentModuleTimingCommand extends Command {
 
     public static final String COMMAND_WORD = "delete_timing";
@@ -34,13 +37,17 @@ public class DeleteStudentModuleTimingCommand extends Command {
     public static final String MESSAGE_SUCCESS = "Deleted module timing %1$s from student: %2$s";
     public static final String MESSAGE_MODULE_NOT_FOUND =
             "This module does not exist in the student's contact in address book";
-    public static final String MESSAGE_MODULE_TIMING_CLASH =
-            "There is a clash in module timings";
+    public static final String MESSAGE_MODULE_TIMING_DOES_NOT_EXIST =
+            "This module timing does not exist in the student's contact in address book";
 
     private final Index index;
     private final ModuleCode moduleCode;
     private final ModuleTiming moduleTiming;
 
+    /**
+     * Represents a command to delete a student's module timing from the address book.
+     * This command removes the specified module timing for a student identified by the given index and module code.
+     */
     public DeleteStudentModuleTimingCommand(Index index, ModuleCode moduleCode, ModuleTiming moduleTiming) {
         requireNonNull(index);
         requireNonNull(moduleCode);
@@ -64,10 +71,9 @@ public class DeleteStudentModuleTimingCommand extends Command {
         if (!model.doesStudentHaveModule(studentToModify, moduleCode)) {
             throw new CommandException(MESSAGE_MODULE_NOT_FOUND);
         }
-        // TODO: check if validation is needed
-        // if (model.doesStudentModuleTimingClash(studentToModify, moduleTiming)) {
-        //     throw new CommandException(MESSAGE_MODULE_TIMING_CLASH);
-        // }
+        if (!model.doesStudentModuleTimingExist(studentToModify, moduleTiming)) {
+            throw new CommandException(MESSAGE_MODULE_TIMING_DOES_NOT_EXIST);
+        }
 
         model.deleteModuleTimingFromStudent(moduleTiming, studentToModify);
 

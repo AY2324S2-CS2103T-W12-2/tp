@@ -122,6 +122,15 @@ public interface Model {
     boolean doesStudentModuleTimingClash(Student s, ModuleTiming t);
 
     /**
+     * Checks if a given student has a specific module timing.
+     *
+     * @param s The student to check.
+     * @param t The module timing to check.
+     * @return True if the student has the module timing, false otherwise.
+     */
+    boolean doesStudentModuleTimingExist(Student s, ModuleTiming t);
+
+    /**
      * Adds module timing to the specified student
      * @param t ModuleTiming to add
      * @param s Student to add module to

@@ -80,7 +80,7 @@ public class AddressBookParser {
             return new DeleteStudentModuleCommandParser().parse(arguments);
 
         case DeleteStudentModuleTimingCommand.COMMAND_WORD:
-        return new DeleteStudentModuleTimingCommandParser().parse(arguments);
+            return new DeleteStudentModuleTimingCommandParser().parse(arguments);
 
         case ClearCommand.COMMAND_WORD:
             return new ClearCommand();

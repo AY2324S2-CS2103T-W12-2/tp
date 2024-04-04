@@ -95,6 +95,16 @@ public class Student {
     }
 
     /**
+     * Returns true if the student has the specified module timing.
+     *
+     * @param t The module timing to check.
+     * @return True if the student has the specified module timing, false otherwise.
+     */
+    public boolean hasModuleTiming(ModuleTiming t) {
+        return moduleTimings.contains(t);
+    }
+
+    /**
      * Add module to student
      * @param m ModuleCode to add
      * @return true if added
