@@ -167,6 +167,11 @@ public class ModelManager implements Model {
     }
 
     @Override
+    public void deleteModuleTimingFromStudent(ModuleTiming t, Student s) {
+        addressBook.deleteModuleTimingFromStudent(t, s);
+    }
+
+    @Override
     public boolean equals(Object other) {
         if (other == this) {
             return true;
