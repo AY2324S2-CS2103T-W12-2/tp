@@ -195,6 +195,18 @@ public class AddCommandTest {
             // TODO Auto-generated method stub
             throw new UnsupportedOperationException("Unimplemented method 'addModuleTimingToStudent'");
         }
+
+        @Override
+        public boolean doesStudentModuleTimingExist(Student s, ModuleTiming t) {
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'doesStudentModuleTimingExist'");
+        }
+
+        @Override
+        public void deleteModuleTimingFromStudent(ModuleTiming t, Student s) {
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'deleteModuleTimingFromStudent'");
+        }
     }
 
     /**
