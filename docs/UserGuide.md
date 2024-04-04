@@ -159,7 +159,7 @@ Refer to the [Features](#features) below for details of each command.
 
 ## Adding a student: `add`
 
-Adds a student to the address book.
+Adds a student to the mod contacts list.
 
 Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​`
 
@@ -173,13 +173,13 @@ Examples:
 
 ## Listing all students : `list`
 
-Shows a list of all students in the address book.
+Shows a list of all students in the mod contacts list.
 
 Format: `list`
 
 ## Editing a student : `edit`
 
-Edits an existing student in the address book.
+Edits an existing student in the mod contacts list.
 
 Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`
 
@@ -196,7 +196,7 @@ Examples:
 
 ## Adding a Module: `add_module`
 
-Adds a module to your friend in the address book.
+Adds a module to your friend in the mod contacts list.
 
 Format: `add_module i/INDEX m/MODULE_CODE`
 
@@ -209,7 +209,7 @@ Format: `add_module i/INDEX m/MODULE_CODE`
 
 ## Deleting a Module: `delete_module`
 
-Deletes a module from your friend in the address book.
+Deletes a module from your friend in the mod contacts list.
 
 Format: `delete_module i/INDEX m/MODULE_CODE`
 
@@ -218,7 +218,7 @@ Format: `delete_module i/INDEX m/MODULE_CODE`
 
 ## Adding a Module Timing: `add_timing`
 
-Adds a module's class timing to your friend in the address book.
+Adds a module's class timing to your friend in the mod contacts list.
 
 Format: `add_timing i/INDEX m/MODULE_CODE d/DAY st/START_TIME et/END_TIME`
 
@@ -230,7 +230,7 @@ Format: `add_timing i/INDEX m/MODULE_CODE d/DAY st/START_TIME et/END_TIME`
 
 ## Deleting a Module Timing: `delete_timing`
 
-Deletes a module's class timing from your friend in the address book.
+Deletes a module's class timing from your friend in the mod contacts list.
 
 Format: `delete_timing i/INDEX m/MODULE_CODE d/DAY st/START_TIME`
 
@@ -277,7 +277,7 @@ Format: `list_modules m/MODULE_CODE`
 
 ## Deleting a student : `delete`
 
-Deletes the specified student from the address book.
+Deletes the specified student from the mod contacts list.
 
 Format: `delete INDEX`
 
@@ -286,12 +286,12 @@ Format: `delete INDEX`
 * The index **must be a positive integer** 1, 2, 3, …​
 
 Examples:
-* `list` followed by `delete 2` deletes the 2nd student in the address book.
+* `list` followed by `delete 2` deletes the 2nd student in the mod contacts list.
 * `find Betsy` followed by `delete 1` deletes the 1st student in the results of the `find` command.
 
 ## Clearing all entries : `clear`
 
-Clears all entries from the address book.
+Clears all entries from the mod contacts list.
 
 Format: `clear`
 
