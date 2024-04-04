@@ -36,8 +36,8 @@ public class IsFreePredicate implements Predicate<Student> {
                 )
                 .noneMatch(
                         moduleTiming ->
-                                startTime.compareTo(moduleTiming.getEndTime()) == -1
-                                && endTime.compareTo(moduleTiming.getStartTime()) == 1
+                                startTime.compareTo(moduleTiming.getEndTime()) < 0
+                                && endTime.compareTo(moduleTiming.getStartTime()) > 0
                 );
     }
 
