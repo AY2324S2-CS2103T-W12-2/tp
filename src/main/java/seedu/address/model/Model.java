@@ -127,4 +127,12 @@ public interface Model {
      * @param s Student to add module to
      */
     void addModuleTimingToStudent(ModuleTiming t, Student s);
+
+    /**
+     * Deletes the specified module timing from the given student.
+     *
+     * @param t The module timing to be deleted.
+     * @param s The student from which the module timing should be deleted.
+     */
+    void deleteModuleTimingFromStudent(ModuleTiming t, Student s);
 }
