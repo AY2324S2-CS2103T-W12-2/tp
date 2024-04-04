@@ -303,7 +303,7 @@ Format: `exit`
 
 --------------------------------------------------------------------------------------------------------------------
 
-## FAQ
+# FAQ
 
 **Q**: How do I transfer my data to another Computer?<br>
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous ModContacts home folder.
@@ -327,7 +327,7 @@ Furthermore, certain edits can cause the ModContacts to behave in unexpected way
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Command summary
+# Command summary
 
 Action | Format, Examples
 --------|------------------
