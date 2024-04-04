@@ -1,5 +1,6 @@
 title: "ModContacts"
 theme: minima
+toc: true
 
 header_pages:
   - UserGuide.md
@@ -8,7 +9,7 @@ header_pages:
 
 markdown: kramdown
 
-repository: "se-edu/addressbook-level3"
+repository: "AY2324S2-CS2103T-W12-2/tp"
 github_icon: "images/github-icon.png"
 
 plugins:

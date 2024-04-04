@@ -5,11 +5,12 @@ title: User Guide
 
 Hello NUS School of Computing (SoC) students! Welcome to the User Guide for **ModContacts**! 
 
-**TIRED** of constantly needing to  remember what your NUS friends are up to?
+**TIRED** of constantly needing to remember what your NUS friends are up to?
 **ModContacts** is a desktop app for keeping track of your peers and the modules that they take so that you can keep in 
 contact with them amidst your journey in NUS!
 
 # Table of Contents
+* TOC
 {:toc}
 
 --------------------------------------------------------------------------------------------------------------------
@@ -37,21 +38,20 @@ Some of you are definitely thinking: _What is the point of this User Guide?_
 The ModContacts User Guide serves as a quick, efficient, all-in-one manual for both new and experienced users.
 
 ### New Users
+It is great to see that you're interested in using ModContacts!
 
 Head to the [Getting Started](#Getting-Started) section and follow the guide to get ModContacts up and running!
 
-Then check out some [Features](#Features) ok idk waht else to write here
+Then check out some [Features](#Features), and the handy [Command Summary](#command-summary).
 
 ### Experienced Users
 
-Head over to the summary section idk havent done this yet
+Head over to the [Command Summary](#command-summary), [FAQ](#faq) or [Troubleshooting](#known-issues) sections.
 
 ## How should I use this guide?
 
-includes information on how users can effectively navigate the document, clarifies the meaning of icons and formatting used, and provides guidance on understanding features, functions, or commands.
-
-
-[Back to Table of Contents](#Table-of-Contents)
+The guide includes information on how users can effectively navigate the document, clarifies the meaning of icons and formatting used, and provides guidance on understanding features, functions, or commands.
+These can be quickly referenced from the [Table of Contents](#Table-of-Contents).
 
 ---
 
@@ -73,23 +73,13 @@ Follow this guide for your OS of choice:
 2. Download the latest `modcontacts.jar` from [here](https://github.com/AY2324S2-CS2103T-W12-2/tp/releases).
 
 3. Simply double-click on `modcontacts.jar` within your file explorer and a GUI similar to what is shown below should appear!
-   ![Ui](images/Ui.png)
 
-## Usage
+![Ui](images/Ui.png)
+
+### Usage
 
 Here we will probably have images of modcontacts showing what the command box is, where the data is shown, 
 images ideally should have labels and what not. Show a sample command usage, maybe add a student. IMAGES.
-
-### Friends, what are they?
-A `Friend` is a person that you want to keep contact with in school! This is pretty intuitive as there is no distinction between the term that we use in ModContacts and the term that is used in real life.
-### Modules, what are they?
-A `Module` refers to the modules that you take during a semester in NUS. They have **Module Codes** (e.g **MA2001** Linear Algebra I) to identify them.
-
-
-### So what now?
-Since you know what a `Module` and a `Friend` is, you are one step closer to being a master at using ModContacts to add your `Friend`, and also add a `Module` to your `Friend`!
-
-Let's get down to how we can write commands to add them!
 
 ### What is a Command?
 
@@ -169,7 +159,7 @@ Refer to the [Features](#features) below for details of each command.
 
 ## Adding a student: `add`
 
-Adds a student to the address book.
+Adds a student to the mod contacts list.
 
 Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​`
 
@@ -183,13 +173,13 @@ Examples:
 
 ## Listing all students : `list`
 
-Shows a list of all students in the address book.
+Shows a list of all students in the mod contacts list.
 
 Format: `list`
 
 ## Editing a student : `edit`
 
-Edits an existing student in the address book.
+Edits an existing student in the mod contacts list.
 
 Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`
 
@@ -206,7 +196,7 @@ Examples:
 
 ## Adding a Module: `add_module`
 
-Adds a module to your friend in the address book.
+Adds a module to your friend in the mod contacts list.
 
 Format: `add_module i/INDEX m/MODULE_CODE`
 
@@ -219,7 +209,7 @@ Format: `add_module i/INDEX m/MODULE_CODE`
 
 ## Deleting a Module: `delete_module`
 
-Deletes a module from your friend in the address book.
+Deletes a module from your friend in the mod contacts list.
 
 Format: `delete_module i/INDEX m/MODULE_CODE`
 
@@ -228,7 +218,7 @@ Format: `delete_module i/INDEX m/MODULE_CODE`
 
 ## Adding a Module Timing: `add_timing`
 
-Adds a module's class timing to your friend in the address book.
+Adds a module's class timing to your friend in the mod contacts list.
 
 Format: `add_timing i/INDEX m/MODULE_CODE d/DAY st/START_TIME et/END_TIME`
 
@@ -240,7 +230,7 @@ Format: `add_timing i/INDEX m/MODULE_CODE d/DAY st/START_TIME et/END_TIME`
 
 ## Deleting a Module Timing: `delete_timing`
 
-Deletes a module's class timing from your friend in the address book.
+Deletes a module's class timing from your friend in the mod contacts list.
 
 Format: `delete_timing i/INDEX m/MODULE_CODE d/DAY st/START_TIME`
 
@@ -291,7 +281,7 @@ Format: `module_search m/MODULE_CODE`
 
 ## Deleting a student : `delete`
 
-Deletes the specified student from the address book.
+Deletes the specified student from the mod contacts list.
 
 Format: `delete INDEX`
 
@@ -300,12 +290,12 @@ Format: `delete INDEX`
 * The index **must be a positive integer** 1, 2, 3, …​
 
 Examples:
-* `list` followed by `delete 2` deletes the 2nd student in the address book.
+* `list` followed by `delete 2` deletes the 2nd student in the mod contacts list.
 * `find Betsy` followed by `delete 1` deletes the 1st student in the results of the `find` command.
 
 ## Clearing all entries : `clear`
 
-Clears all entries from the address book.
+Clears all entries from the mod contacts list.
 
 Format: `clear`
 
@@ -317,20 +307,20 @@ Format: `exit`
 
 --------------------------------------------------------------------------------------------------------------------
 
-## FAQ
+# FAQ
 
 **Q**: How do I transfer my data to another Computer?<br>
-**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous AddressBook home folder.
+**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous ModContacts home folder.
 
 **Q**: How do I know if my data is saved?<br>
-**A**: AddressBook data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
+**A**: ModContacts data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
 
 **Q**: Can I manually edit the data file?<br>
-**A**: AddressBook data are saved automatically as a JSON file `[JAR file location]/data/addressbook.json`. Advanced users are welcome to update data directly by editing that data file.
+**A**: ModContacts data are saved automatically as a JSON file `[JAR file location]/data/modcontacts.json`. Advanced users are welcome to update data directly by editing that data file.
 
 <div markdown="span" class="alert alert-warning">:exclamation: **Caution:**
-If your changes to the data file makes its format invalid, AddressBook will discard all data and start with an empty data file at the next run. Hence, it is recommended to take a backup of the file before editing it.<br>
-Furthermore, certain edits can cause the AddressBook to behave in unexpected ways (e.g., if a value entered is outside of the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
+If your changes to the data file makes its format invalid, ModContacts will discard all data and start with an empty data file at the next run. Hence, it is recommended to take a backup of the file before editing it.<br>
+Furthermore, certain edits can cause the ModContacts to behave in unexpected ways (e.g., if a value entered is outside of the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 </div>
 
 --------------------------------------------------------------------------------------------------------------------
@@ -341,7 +331,7 @@ Furthermore, certain edits can cause the AddressBook to behave in unexpected way
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Command summary
+# Command summary
 
 Action | Format, Examples
 --------|------------------

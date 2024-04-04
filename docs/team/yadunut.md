@@ -3,7 +3,7 @@ layout: page
 title: Yadunand's Project Portfolio Page
 ---
 
-### Project: AddressBook Level 3
+### Project: ModContacts
 
 ModContacts is a desktop address book application used to manage our friend's contacts and the modules they are taking. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 10 kLoC.
 
