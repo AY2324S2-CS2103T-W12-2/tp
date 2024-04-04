@@ -9,6 +9,9 @@ import seedu.address.logic.commands.module.ModuleSearchCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.module.ModuleCode;
 
+/**
+ * Parses input arguments and creates a new ModuleSearchCommand object
+ */
 public class ModuleSearchCommandParser implements Parser<ModuleSearchCommand> {
     @Override
     public ModuleSearchCommand parse(String userInput) throws ParseException {

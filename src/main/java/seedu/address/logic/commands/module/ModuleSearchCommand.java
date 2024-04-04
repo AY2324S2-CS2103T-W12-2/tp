@@ -10,6 +10,9 @@ import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.module.ModuleCode;
 
+/**
+ * Searches for students with the specified module code.
+ */
 public class ModuleSearchCommand extends Command {
     public static final String COMMAND_WORD = "module_search";
     public static final String MESSAGE_USAGE = "Searches for students with the specified module code. "
@@ -17,6 +20,10 @@ public class ModuleSearchCommand extends Command {
             + "Example: " + COMMAND_WORD + " " + PREFIX_MODULE_CODE + "CS2103T";
     private final ModuleCode moduleCode;
 
+    /**
+     * Creates a ModuleSearchCommand to search for students with the specified module code.
+     * @param moduleCode
+     */
     public ModuleSearchCommand(ModuleCode moduleCode) {
         requireNonNull(moduleCode);
         this.moduleCode = moduleCode;
