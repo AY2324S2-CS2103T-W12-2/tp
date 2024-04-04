@@ -37,14 +37,15 @@ Some of you are definitely thinking: _What is the point of this User Guide?_
 The ModContacts User Guide serves as a quick, efficient, all-in-one manual for both new and experienced users.
 
 ### New Users
+It is great to see that you're interested in using ModContacts!
 
 Head to the [Getting Started](#Getting-Started) section and follow the guide to get ModContacts up and running!
 
-Then check out some [Features](#Features) ok idk waht else to write here
+Then check out some [Features](#Features), and the handy [Command Summary](#command-summary).
 
 ### Experienced Users
 
-Head over to the summary section idk havent done this yet
+Head over to the [Command Summary](#command-summary), [FAQ](#faq) or [Troubleshooting](#known-issues) sections.
 
 ## How should I use this guide?
 
