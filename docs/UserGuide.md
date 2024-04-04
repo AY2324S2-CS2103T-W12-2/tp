@@ -49,10 +49,8 @@ Head over to the [Command Summary](#command-summary), [FAQ](#faq) or [Troublesho
 
 ## How should I use this guide?
 
-includes information on how users can effectively navigate the document, clarifies the meaning of icons and formatting used, and provides guidance on understanding features, functions, or commands.
-
-
-[Back to Table of Contents](#Table-of-Contents)
+The guide includes information on how users can effectively navigate the document, clarifies the meaning of icons and formatting used, and provides guidance on understanding features, functions, or commands.
+These can be quickly referenced from the [Table of Contents](#Table-of-Contents).
 
 ---
 
@@ -74,23 +72,13 @@ Follow this guide for your OS of choice:
 2. Download the latest `modcontacts.jar` from [here](https://github.com/AY2324S2-CS2103T-W12-2/tp/releases).
 
 3. Simply double-click on `modcontacts.jar` within your file explorer and a GUI similar to what is shown below should appear!
-   ![Ui](images/Ui.png)
 
-## Usage
+![Ui](images/Ui.png)
+
+### Usage
 
 Here we will probably have images of modcontacts showing what the command box is, where the data is shown, 
 images ideally should have labels and what not. Show a sample command usage, maybe add a student. IMAGES.
-
-### Friends, what are they?
-A `Friend` is a person that you want to keep contact with in school! This is pretty intuitive as there is no distinction between the term that we use in ModContacts and the term that is used in real life.
-### Modules, what are they?
-A `Module` refers to the modules that you take during a semester in NUS. They have **Module Codes** (e.g **MA2001** Linear Algebra I) to identify them.
-
-
-### So what now?
-Since you know what a `Module` and a `Friend` is, you are one step closer to being a master at using ModContacts to add your `Friend`, and also add a `Module` to your `Friend`!
-
-Let's get down to how we can write commands to add them!
 
 ### What is a Command?
 
