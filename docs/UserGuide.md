@@ -5,7 +5,7 @@ title: User Guide
 
 Hello NUS School of Computing (SoC) students! Welcome to the User Guide for **ModContacts**! 
 
-**TIRED** of constantly needing to  remember what your NUS friends are up to?
+**TIRED** of constantly needing to remember what your NUS friends are up to?
 **ModContacts** is a desktop app for keeping track of your peers and the modules that they take so that you can keep in 
 contact with them amidst your journey in NUS!
 
