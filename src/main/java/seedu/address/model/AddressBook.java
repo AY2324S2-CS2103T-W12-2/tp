@@ -154,6 +154,25 @@ public class AddressBook implements ReadOnlyAddressBook {
         }
     }
 
+    /**
+     * Deletes a module timing from a student in the address book.
+     *
+     * @param t The module timing to be deleted.
+     * @param s The student from whom the module timing is to be deleted.
+     */
+    public void deleteModuleTimingFromStudent(ModuleTiming t, Student s) {
+        requireNonNull(t);
+        requireNonNull(s);
+        for (Student candidate : students) {
+            if (candidate.equals(s) && candidate.hasModule(t.getModuleCode())) {
+                Student editedStudent = candidate.copy();
+                editedStudent.deleteModuleTiming(t);
+                students.setStudent(candidate, editedStudent);
+                return;
+            }
+        }
+    }
+
     //// util methods
 
     @Override

@@ -68,4 +68,14 @@ public class ModuleTiming {
     public String toString() {
         return String.format("%s %s-%s", day.toString(), startTime.toString(), endTime.toString());
     }
+
+    @Override
+    public boolean equals(Object other) {
+        return other == this // short circuit if same object
+                || (other instanceof ModuleTiming // instanceof handles nulls
+                && moduleCode.equals(((ModuleTiming) other).moduleCode)
+                && day.equals(((ModuleTiming) other).day)
+                && startTime.equals(((ModuleTiming) other).startTime)
+                && endTime.equals(((ModuleTiming) other).endTime)); // state check
+    }
 }
