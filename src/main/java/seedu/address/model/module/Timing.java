@@ -52,4 +52,11 @@ public class Timing {
     public String toString() {
         return time.format(formatter);
     }
+
+    @Override
+    public boolean equals(Object other) {
+        return other == this // short circuit if same object
+                || (other instanceof Timing // instanceof handles nulls
+                && time.equals(((Timing) other).time)); // state check
+    }
 }
