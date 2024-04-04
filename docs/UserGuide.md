@@ -283,7 +283,11 @@ Format: `list_modules m/MODULE_CODE`
 
 * The `MODULE_CODE` refers to the module code of the module you intend to add
 
+## Find friends with modules: `module_search`
 
+Finds friends who are taking the specified module.
+
+Format: `module_search m/MODULE_CODE`
 
 ## Deleting a student : `delete`
 
