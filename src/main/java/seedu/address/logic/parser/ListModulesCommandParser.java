@@ -22,6 +22,10 @@ public class ListModulesCommandParser implements Parser<ListModulesCommand> {
         }
         argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_MODULE_CODE);
         String modulePrefix = argMultimap.getValue(PREFIX_MODULE_CODE).get();
+        if (modulePrefix.trim().isEmpty()) {
+            throw new ParseException(
+                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, ListModulesCommand.MESSAGE_USAGE));
+        }
         return new ListModulesCommand(modulePrefix);
     }
 
