@@ -58,9 +58,15 @@ public interface Model {
     ModuleMap getModuleMap();
 
     /**
+     * Returns true if a module with the same identity as {@code module} exists in the address book.
+     */
+    boolean hasModule(ModuleCode code);
+
+    /**
      * Returns true if a student with the same identity as {@code student} exists in the address book.
      */
     boolean hasStudent(Student student);
+
 
     /**
      * Deletes the given student.
