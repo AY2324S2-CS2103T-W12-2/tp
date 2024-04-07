@@ -95,6 +95,7 @@ public class JsonUtil {
         requireNonNull(filePath);
 
         if (!Files.exists(filePath)) {
+            logger.severe("file " + filePath + " not found");
             return Optional.empty();
         }
         logger.info("JSON file " + filePath + " found.");
@@ -108,6 +109,15 @@ public class JsonUtil {
         }
 
         return Optional.of(jsonArrayFile);
+    }
+
+    public static <T> T readJsonString(String jsonString, Class<T> classOfObjectToDeserialize) throws DataLoadingException{
+        try {
+            return fromJsonString(jsonString, classOfObjectToDeserialize);
+        } catch (IOException e) {
+            logger.severe("Error reading from jsonString");
+            throw new DataLoadingException(e);
+        }
     }
 
     /**

@@ -2,6 +2,7 @@ package seedu.address.storage;
 
 import static java.util.Objects.requireNonNull;
 
+import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Optional;
@@ -21,27 +22,33 @@ public class JsonModuleMapStorage implements ModuleMapStorage {
 
     private static final Logger logger = LogsCenter.getLogger(JsonModuleMapStorage.class);
 
-    private final Path filePath = Paths.get("src/main/resources/module_data.json");
-
+    private final String filePath = "/data/module_data.json";
     public JsonModuleMapStorage() {}
 
     @Override
     public ModuleMap readModuleMap() {
-        requireNonNull(filePath);
+        String data;
+        try {
+            data = new String(this.getClass().getResourceAsStream(filePath).readAllBytes());
+        } catch (IOException e) {
+            logger.severe("Error reading from module file: " + filePath);
+            throw new Error("Error reading from module file: " + filePath, e);
+
+        }
+        requireNonNull(data);
 
         ModuleMap moduleMap = new ModuleMap();
 
-        Optional<JsonAdaptedModule[]> jsonModuleMap = Optional.empty();
+        JsonAdaptedModule[] jsonModuleMap;
 
         try {
-            jsonModuleMap = JsonUtil.readJsonArrayFile(filePath, JsonAdaptedModule[].class);
+            jsonModuleMap = JsonUtil.readJsonString(data, JsonAdaptedModule[].class);
         } catch (DataLoadingException e) {
             logger.severe("Error reading from module file: " + filePath);
             throw new Error("Error reading from module file: " + filePath, e);
         }
 
-        JsonAdaptedModule[] jsonModules = jsonModuleMap.orElse(new JsonAdaptedModule[0]);
-        for (JsonAdaptedModule jsonModule : jsonModules) {
+        for (JsonAdaptedModule jsonModule : jsonModuleMap) {
             try {
                 Module module = jsonModule.toModelType();
                 moduleMap.addModule(module);

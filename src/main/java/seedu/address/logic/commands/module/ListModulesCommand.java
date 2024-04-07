@@ -24,7 +24,7 @@ public class ListModulesCommand extends Command {
     /** Creates a ListModulesCommand to list modules with the specified module code prefix {@code modulePrefix}. */
     public ListModulesCommand(String modulePrefix) {
         requireNonNull(modulePrefix);
-        this.modulePrefix = modulePrefix;
+        this.modulePrefix = modulePrefix.toUpperCase();
     }
 
     @Override
