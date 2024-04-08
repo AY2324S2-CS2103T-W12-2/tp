@@ -99,6 +99,11 @@ public class ModelManager implements Model {
     }
 
     @Override
+    public boolean hasModule(ModuleCode code) {
+        return moduleMap.hasModule(code);
+    }
+
+    @Override
     public boolean hasStudent(Student student) {
         requireNonNull(student);
         return addressBook.hasStudent(student);

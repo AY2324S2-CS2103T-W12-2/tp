@@ -17,14 +17,14 @@ public class ListModulesCommand extends Command {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": List all modules in the address book."
             + "Parameters: "
-            + PREFIX_MODULE_CODE + "MODULE CODE";
+            + PREFIX_MODULE_CODE + "MODULE CODE Prefix";
 
     private final String modulePrefix;
 
     /** Creates a ListModulesCommand to list modules with the specified module code prefix {@code modulePrefix}. */
     public ListModulesCommand(String modulePrefix) {
         requireNonNull(modulePrefix);
-        this.modulePrefix = modulePrefix;
+        this.modulePrefix = modulePrefix.toUpperCase();
     }
 
     @Override

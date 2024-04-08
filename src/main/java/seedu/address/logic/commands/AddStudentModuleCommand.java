@@ -52,6 +52,11 @@ public class AddStudentModuleCommand extends Command {
             throw new CommandException(Messages.MESSAGE_INVALID_STUDENT_DISPLAYED_INDEX);
         }
 
+        // Check if modulecode exists in moduleMap
+        if (!model.hasModule(moduleCode)) {
+            throw new CommandException(Messages.MESSAGE_INVALID_MODULE_CODE);
+        }
+
         Student studentToModify = lastShownList.get(index.getZeroBased());
 
         if (model.doesStudentHaveModule(studentToModify, moduleCode)) {
