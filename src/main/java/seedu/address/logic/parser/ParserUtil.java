@@ -1,6 +1,7 @@
 package seedu.address.logic.parser;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -8,6 +9,7 @@ import java.util.Set;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.StringUtil;
+import seedu.address.logic.commands.module.ListModulesCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.module.Day;
 import seedu.address.model.module.ModuleCode;
@@ -139,6 +141,23 @@ public class ParserUtil {
             throw new ParseException(String.format(ModuleCode.MESSAGE_CONSTRAINTS, trimmedModuleCode));
         }
         return new ModuleCode(trimmedModuleCode);
+    }
+
+    /**
+     * Parses a {@code String modulePrefix} into an {@code trimmedModulePrefix}.
+     * Leading and trailing whitespaces will be trimmed.
+     *
+     * @throws ParseException if the given {@code modulePrefix} is invalid.
+     */
+    public static String parseModulePrefix(String modulePrefix) throws ParseException {
+        requireNonNull(modulePrefix);
+        String trimmedModulePrefix = modulePrefix.trim().toUpperCase();
+        if (trimmedModulePrefix.isEmpty()) {
+            throw new ParseException(
+                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, ListModulesCommand.MESSAGE_USAGE));
+        }
+
+        return trimmedModulePrefix;
     }
 
     /**
