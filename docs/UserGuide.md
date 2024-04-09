@@ -232,12 +232,13 @@ Format: `add_timing i/INDEX m/MODULE_CODE d/DAY st/START_TIME et/END_TIME`
 
 Deletes a module's class timing from your friend in the mod contacts list.
 
-Format: `delete_timing i/INDEX m/MODULE_CODE d/DAY st/START_TIME`
+Format: `delete_timing i/INDEX m/MODULE_CODE d/DAY st/START_TIME et/END_TIME`
 
 * The `INDEX` refers to the index number shown in the displayed student list. The index must be a positive integer 1, 2, 3, ...
 * The `MODULE_CODE` refers to the module code of the module you intend to add
 * The `DAY` refers to the day of the class, i.e. Mon, Tue, Wed, Thu, Fri, Sat, Sun
 * The `START_TIME` refers to the start time of the class i.e. 0800, 1230, 1845, 2300
+* The `END_TIME` refers to the end time of the class i.e. 0800, 1230, 1845, 2300
 
 
 ## Locating students by name: `find`
