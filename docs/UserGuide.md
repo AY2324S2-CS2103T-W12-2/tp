@@ -139,7 +139,7 @@ In summary, what this command (`add n/Aditya p/98765432`) does is that it adds a
 
 Refer to the [Features](#features) below for details of each command.
  
-[Back to Table of Contents](#Table-of-Contents)
+[Back to Table of Contents](#table-of-contents)
 
 --------------------------------------------------------------------------------------------------------------------
 
