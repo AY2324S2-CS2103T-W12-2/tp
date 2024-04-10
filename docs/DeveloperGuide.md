@@ -163,6 +163,21 @@ Classes used by multiple components are in the `seedu.addressbook.commons` packa
 
 This section describes some noteworthy details on how certain features are implemented.
 
+### Adding a ModuleTiming to a Student
+
+Adding a class to a student in ModContacts is done by the command `add_timing i/1 m/CS2103T d/Mon st/0800 et/1200`
+
+The entry point for this command is when the `LogicManager` parses the command, gets a `AddStudentModuleCommand`, 
+and then executes it.
+
+`AddStudentModuleCommand` performs some validations, then adds the `ModuleTiming` to the designated
+`Student` in the `FilteredStudentList` via `Model#addModuleTimingToStudent`.
+
+The following is the sequence diagram for this example.
+
+<img src="images/AddModuleTimingSequenceDiagram.png" />
+
+
 ### \[Proposed\] Undo/redo feature
 
 #### Proposed Implementation
