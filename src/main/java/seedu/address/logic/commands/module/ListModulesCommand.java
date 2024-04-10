@@ -6,6 +6,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_MODULE_CODE;
 import java.util.List;
 
 import seedu.address.commons.util.StringUtil;
+import seedu.address.logic.commands.AddCommand;
 import seedu.address.logic.commands.Command;
 import seedu.address.logic.commands.CommandResult;
 import seedu.address.logic.commands.exceptions.CommandException;
@@ -41,5 +42,20 @@ public class ListModulesCommand extends Command {
             sb.append(StringUtil.truncate(m.getDescription().getValue(), 80)).append("\n");
         }
         return new CommandResult(sb.toString());
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == this) {
+            return true;
+        }
+
+        // instanceof handles nulls
+        if (!(other instanceof ListModulesCommand)) {
+            return false;
+        }
+
+        ListModulesCommand otherListModulesCommand = (ListModulesCommand) other;
+        return modulePrefix.equals(otherListModulesCommand.modulePrefix);
     }
 }
