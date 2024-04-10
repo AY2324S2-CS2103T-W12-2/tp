@@ -72,7 +72,14 @@ Follow this guide for your OS of choice:
 
 2. Download the latest `modcontacts.jar` from [here](https://github.com/AY2324S2-CS2103T-W12-2/tp/releases).
 
-3. Simply double-click on `modcontacts.jar` within your file explorer and a GUI similar to what is shown below should appear!
+3. Opening the app:
+   1. **If you are using Windows:** Simply double-click on `modcontacts.jar` within your file explorer and a GUI similar to what is shown below should appear!
+   2. **If you are using MacOS / Linux:** Open a terminal window. Navigate to the folder containing `modcontacts.jar` using the `cd [relative/absolute folder path]` command. Then run `java -jar modcontacts.jar`.
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+For MacOS and Linux users: If you are new to using the terminal, [this guide](https://riptutorial.com/terminal/example/26023/basic-navigation-commands) may be useful for navigating to the folder in step 3.
+</div>
+
 
 ![Ui](images/Ui.png)
 
