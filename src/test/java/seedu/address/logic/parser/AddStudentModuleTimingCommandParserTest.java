@@ -1,5 +1,6 @@
 package seedu.address.logic.parser;
 
+import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.address.logic.commands.CommandTestUtil.DAY_DESC_MON;
 import static seedu.address.logic.commands.CommandTestUtil.END_TIMING_DESC_1600;
 import static seedu.address.logic.commands.CommandTestUtil.MODULE_CODE_DESC_CS2103T;
@@ -9,6 +10,7 @@ import static seedu.address.logic.commands.CommandTestUtil.VALID_MODULE_CODE_CS2
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TIMING_0800;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TIMING_1600;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_STUDENT_ID;
+import static seedu.address.logic.parser.CommandParserTestUtil.assertParseFailure;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseSuccess;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_STUDENT;
 
@@ -46,5 +48,17 @@ public class AddStudentModuleTimingCommandParserTest {
                 expectedModuleTiming);
 
         assertParseSuccess(parser, userInput, expectedCommand);
+    }
+
+    @Test
+    public void parse_compulsoryFieldMissing_failure() {
+        String expectedMessage = String.format(MESSAGE_INVALID_COMMAND_FORMAT,
+                AddStudentModuleTimingCommand.MESSAGE_USAGE);
+
+        // missing index prefix
+        assertParseFailure(parser,
+                " " + INDEX_FIRST_STUDENT.getOneBased() + MODULE_CODE_DESC_CS2103T
+                        + START_TIMING_DESC_0800 + END_TIMING_DESC_1600,
+                expectedMessage);
     }
 }
