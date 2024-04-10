@@ -15,10 +15,7 @@ import seedu.address.model.module.Day;
 import seedu.address.model.module.ModuleCode;
 import seedu.address.model.module.ModuleTiming;
 import seedu.address.model.module.Timing;
-import seedu.address.model.student.Address;
-import seedu.address.model.student.Email;
-import seedu.address.model.student.Name;
-import seedu.address.model.student.Phone;
+import seedu.address.model.student.*;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -207,5 +204,23 @@ public class ParserUtil {
             throw new ParseException(ModuleTiming.MESSAGE_CONSTRAINTS);
         }
         return new ModuleTiming(moduleCode, day, startTime, endTime);
+    }
+
+    /**
+     * Parses a {@code ModuleCode moduleCode}, {@code Day day}, {@code Timing startTime}, {@code Timing endTime}
+     * into an {@code ModuleTiming}.
+     * Also validates that start time < end time.
+     *
+     * @throws ParseException if the given {@code email} is invalid.
+     */
+    public static IsFreePredicate parseIsFreePredicate(
+            Day day, Timing startTime, Timing endTime) throws ParseException {
+        requireNonNull(day);
+        requireNonNull(startTime);
+        requireNonNull(endTime);
+        if (!IsFreePredicate.isValidTimeRange(startTime, endTime)) {
+            throw new ParseException(IsFreePredicate.MESSAGE_CONSTRAINTS);
+        }
+        return new IsFreePredicate(startTime, endTime, day);
     }
 }

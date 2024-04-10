@@ -10,6 +10,7 @@ import java.util.stream.Stream;
 import seedu.address.logic.commands.FindFreeTimeCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.module.Day;
+import seedu.address.model.module.ModuleTiming;
 import seedu.address.model.module.Timing;
 import seedu.address.model.student.IsFreePredicate;
 
@@ -39,7 +40,9 @@ public class FindFreeTimeCommandParser implements Parser<FindFreeTimeCommand> {
         Timing endTime = ParserUtil.parseTiming(argMultimap.getValue(PREFIX_END_TIME).get());
         Day day = ParserUtil.parseDay((argMultimap.getValue(PREFIX_DAY)).get());
 
-        return new FindFreeTimeCommand(new IsFreePredicate(startTime, endTime, day));
+        IsFreePredicate isFreePredicate = ParserUtil.parseIsFreePredicate(day, startTime, endTime);
+
+        return new FindFreeTimeCommand(isFreePredicate);
     }
 
     /**
