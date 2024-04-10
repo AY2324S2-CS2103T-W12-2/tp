@@ -10,7 +10,6 @@ import java.util.stream.Stream;
 import seedu.address.logic.commands.FindFreeTimeCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.module.Day;
-import seedu.address.model.module.ModuleTiming;
 import seedu.address.model.module.Timing;
 import seedu.address.model.student.IsFreePredicate;
 
