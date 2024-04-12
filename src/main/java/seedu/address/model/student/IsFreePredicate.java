@@ -10,6 +10,7 @@ import seedu.address.model.module.Timing;
  * Tests that a {@code Student} is free between a given timing
  */
 public class IsFreePredicate implements Predicate<Student> {
+    public static final String MESSAGE_CONSTRAINTS = "End time should be larger than Start time";
     private final Timing startTime;
     private final Timing endTime;
 
@@ -26,6 +27,14 @@ public class IsFreePredicate implements Predicate<Student> {
         this.endTime = endTime;
         this.day = day;
     }
+
+    /**
+     * Returns true if the start time < end time.
+     */
+    public static boolean isValidTimeRange(Timing startTime, Timing endTime) {
+        return startTime.compareTo(endTime) < 0;
+    }
+
 
     @Override
     public boolean test(Student student) {

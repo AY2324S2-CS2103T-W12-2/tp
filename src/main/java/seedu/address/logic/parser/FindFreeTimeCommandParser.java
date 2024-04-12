@@ -39,7 +39,9 @@ public class FindFreeTimeCommandParser implements Parser<FindFreeTimeCommand> {
         Timing endTime = ParserUtil.parseTiming(argMultimap.getValue(PREFIX_END_TIME).get());
         Day day = ParserUtil.parseDay((argMultimap.getValue(PREFIX_DAY)).get());
 
-        return new FindFreeTimeCommand(new IsFreePredicate(startTime, endTime, day));
+        IsFreePredicate isFreePredicate = ParserUtil.parseIsFreePredicate(day, startTime, endTime);
+
+        return new FindFreeTimeCommand(isFreePredicate);
     }
 
     /**
