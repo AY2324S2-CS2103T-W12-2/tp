@@ -3,9 +3,13 @@ package seedu.address.logic.commands;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_DAY;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_END_TIME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_MODULE_CODE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_START_TIME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import static seedu.address.testutil.Assert.assertThrows;
 
@@ -36,6 +40,11 @@ public class CommandTestUtil {
     public static final String VALID_ADDRESS_BOB = "Block 123, Bobby Street 3";
     public static final String VALID_TAG_HUSBAND = "husband";
     public static final String VALID_TAG_FRIEND = "friend";
+    public static final String VALID_MODULE_CODE_CS2103T = "CS2103T";
+    public static final String VALID_DAY_MON = "Mon";
+    public static final String VALID_TIMING_0800 = "0800";
+    public static final String VALID_TIMING_1600 = "1600";
+
 
     public static final String NAME_DESC_AMY = " " + PREFIX_NAME + VALID_NAME_AMY;
     public static final String NAME_DESC_BOB = " " + PREFIX_NAME + VALID_NAME_BOB;
@@ -47,12 +56,21 @@ public class CommandTestUtil {
     public static final String ADDRESS_DESC_BOB = " " + PREFIX_ADDRESS + VALID_ADDRESS_BOB;
     public static final String TAG_DESC_FRIEND = " " + PREFIX_TAG + VALID_TAG_FRIEND;
     public static final String TAG_DESC_HUSBAND = " " + PREFIX_TAG + VALID_TAG_HUSBAND;
+    public static final String MODULE_CODE_DESC_CS2103T = " " + PREFIX_MODULE_CODE + VALID_MODULE_CODE_CS2103T;
+    public static final String DAY_DESC_MON = " " + PREFIX_DAY + VALID_DAY_MON;
+    public static final String START_TIMING_DESC_0800 = " " + PREFIX_START_TIME + VALID_TIMING_0800;
+    public static final String END_TIMING_DESC_1600 = " " + PREFIX_END_TIME + VALID_TIMING_1600;
 
     public static final String INVALID_NAME_DESC = " " + PREFIX_NAME + "James&"; // '&' not allowed in names
     public static final String INVALID_PHONE_DESC = " " + PREFIX_PHONE + "911a"; // 'a' not allowed in phones
     public static final String INVALID_EMAIL_DESC = " " + PREFIX_EMAIL + "bob!yahoo"; // missing '@' symbol
     public static final String INVALID_ADDRESS_DESC = " " + PREFIX_ADDRESS; // empty string not allowed for addresses
     public static final String INVALID_TAG_DESC = " " + PREFIX_TAG + "hubby*"; // '*' not allowed in tags
+    public static final String INVALID_MODULE_CODE = "ABCDEFG";
+    public static final String INVALID_MODULE_CODE_DESC = " " + PREFIX_MODULE_CODE + INVALID_MODULE_CODE;
+    public static final String INVALID_DAY_DESC = " " + PREFIX_DAY + "mond";
+    public static final String INVALID_START_TIMING_DESC = " " + PREFIX_START_TIME + "0899";
+    public static final String INVALID_END_TIMING_DESC = " " + PREFIX_END_TIME + "2500";
 
     public static final String PREAMBLE_WHITESPACE = "\t  \r  \n";
     public static final String PREAMBLE_NON_EMPTY = "NonEmptyPreamble";

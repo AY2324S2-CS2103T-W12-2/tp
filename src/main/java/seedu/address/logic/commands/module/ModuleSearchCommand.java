@@ -38,4 +38,19 @@ public class ModuleSearchCommand extends Command {
         sb.append(String.format(Messages.MESSAGE_STUDENTS_LISTED_OVERVIEW, model.getFilteredStudentList().size()));
         return new CommandResult(sb.toString());
     }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == this) {
+            return true;
+        }
+
+        // instanceof handles nulls
+        if (!(other instanceof ModuleSearchCommand)) {
+            return false;
+        }
+
+        ModuleSearchCommand otherModuleSearchCommand = (ModuleSearchCommand) other;
+        return moduleCode.equals(otherModuleSearchCommand.moduleCode);
+    }
 }

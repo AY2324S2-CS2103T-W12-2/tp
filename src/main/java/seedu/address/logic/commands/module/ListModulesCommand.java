@@ -42,4 +42,19 @@ public class ListModulesCommand extends Command {
         }
         return new CommandResult(sb.toString());
     }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == this) {
+            return true;
+        }
+
+        // instanceof handles nulls
+        if (!(other instanceof ListModulesCommand)) {
+            return false;
+        }
+
+        ListModulesCommand otherListModulesCommand = (ListModulesCommand) other;
+        return modulePrefix.equals(otherListModulesCommand.modulePrefix);
+    }
 }
