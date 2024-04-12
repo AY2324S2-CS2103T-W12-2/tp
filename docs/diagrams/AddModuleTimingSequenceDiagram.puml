@@ -1,0 +1,70 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+box Logic LOGIC_COLOR_T1
+participant ":LogicManager" as LogicManager LOGIC_COLOR
+participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
+participant ":AddStudentModuleTimingCommandParser" as AddStudentModuleTimingCommandParser LOGIC_COLOR
+participant "d:AddStudentModuleTimingCommand" as AddStudentModuleTimingCommand LOGIC_COLOR
+participant "r:CommandResult" as CommandResult LOGIC_COLOR
+end box
+
+box Model MODEL_COLOR_T1
+participant "m:Model" as Model MODEL_COLOR
+end box
+
+[-> LogicManager : execute("add_timing i/1 m/CS2103T d/Mon st/0800 et/1200")
+activate LogicManager
+
+LogicManager -> AddressBookParser : parseCommand("add_timing i/1 m/CS2103T d/Mon st/0800 et/1200")
+activate AddressBookParser
+
+create AddStudentModuleTimingCommandParser
+AddressBookParser -> AddStudentModuleTimingCommandParser
+activate AddStudentModuleTimingCommandParser
+
+AddStudentModuleTimingCommandParser --> AddressBookParser
+deactivate AddStudentModuleTimingCommandParser
+
+AddressBookParser -> AddStudentModuleTimingCommandParser : parse("i/1 m/CS2103T d/Mon st/0800 et/1200")
+activate AddStudentModuleTimingCommandParser
+
+create AddStudentModuleTimingCommand
+AddStudentModuleTimingCommandParser -> AddStudentModuleTimingCommand
+activate AddStudentModuleTimingCommand
+
+AddStudentModuleTimingCommand --> AddStudentModuleTimingCommandParser :
+deactivate AddStudentModuleTimingCommand
+
+AddStudentModuleTimingCommandParser --> AddressBookParser : d
+deactivate AddStudentModuleTimingCommandParser
+'Hidden arrow to position the destroy marker below the end of the activation bar.
+AddStudentModuleTimingCommandParser -[hidden]-> AddressBookParser
+destroy AddStudentModuleTimingCommandParser
+
+AddressBookParser --> LogicManager : d
+deactivate AddressBookParser
+
+LogicManager -> AddStudentModuleTimingCommand : execute(m)
+activate AddStudentModuleTimingCommand
+
+AddStudentModuleTimingCommand -> Model : addModuleTimingToStudent(moduleTiming, studentToModify)
+activate Model
+
+Model --> AddStudentModuleTimingCommand
+deactivate Model
+
+create CommandResult
+AddStudentModuleTimingCommand -> CommandResult
+activate CommandResult
+
+CommandResult --> AddStudentModuleTimingCommand
+deactivate CommandResult
+
+AddStudentModuleTimingCommand --> LogicManager : r
+deactivate AddStudentModuleTimingCommand
+
+[<--LogicManager
+deactivate LogicManager
+@enduml
