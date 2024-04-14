@@ -28,10 +28,10 @@ public class AddStudentModuleTimingCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a module timing to the module of a student "
             + "in the address book. "
             + "Parameters: "
-            + PREFIX_STUDENT_ID + "STUDENT ID"
-            + PREFIX_MODULE_CODE + "MODULE CODE"
-            + PREFIX_DAY + "DAY"
-            + PREFIX_START_TIME + "START TIME"
+            + PREFIX_STUDENT_ID + "STUDENT ID "
+            + PREFIX_MODULE_CODE + "MODULE CODE "
+            + PREFIX_DAY + "DAY "
+            + PREFIX_START_TIME + "START TIME "
             + PREFIX_END_TIME + "END TIME";
 
     public static final String MESSAGE_SUCCESS = "New module timing %1$s added to student: %2$s";

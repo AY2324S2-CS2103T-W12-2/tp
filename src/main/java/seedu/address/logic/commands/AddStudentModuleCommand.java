@@ -23,7 +23,7 @@ public class AddStudentModuleCommand extends Command {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a module to the student in the address book. "
             + "Parameters: "
-            + PREFIX_STUDENT_ID + "STUDENT ID"
+            + PREFIX_STUDENT_ID + "STUDENT ID "
             + PREFIX_MODULE_CODE + "MODULE CODE";
 
     public static final String MESSAGE_SUCCESS = "New module %1$s added to student: %2$s";

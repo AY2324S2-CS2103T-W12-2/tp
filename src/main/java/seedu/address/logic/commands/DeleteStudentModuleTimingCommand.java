@@ -28,10 +28,10 @@ public class DeleteStudentModuleTimingCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Deletes a module timing from the module of a student "
             + "in the address book. "
             + "Parameters: "
-            + PREFIX_STUDENT_ID + "STUDENT ID"
-            + PREFIX_MODULE_CODE + "MODULE CODE"
-            + PREFIX_DAY + "DAY"
-            + PREFIX_START_TIME + "START TIME"
+            + PREFIX_STUDENT_ID + "STUDENT ID "
+            + PREFIX_MODULE_CODE + "MODULE CODE "
+            + PREFIX_DAY + "DAY "
+            + PREFIX_START_TIME + "START TIME "
             + PREFIX_END_TIME + "END TIME";
 
     public static final String MESSAGE_SUCCESS = "Deleted module timing %1$s from student: %2$s";
