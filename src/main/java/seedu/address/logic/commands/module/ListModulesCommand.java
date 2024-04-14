@@ -38,7 +38,7 @@ public class ListModulesCommand extends Command {
         sb.append("List of modules with prefix: ").append(this.modulePrefix).append("\n");
         for (Module m : modules) {
             sb.append(m.getModuleCode().getCode()).append(" : ");
-            sb.append(StringUtil.truncate(m.getDescription().getValue(), 80)).append("\n");
+            sb.append(m.getDescription().getValue()).append("\n\n");
         }
         return new CommandResult(sb.toString());
     }
