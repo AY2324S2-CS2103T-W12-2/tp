@@ -62,6 +62,15 @@ public class StringUtil {
     }
 
     /**
+     * Checks if {@code s} is a number
+     * @param s the string to parse
+     * @return true if s is a number
+     */
+    public static boolean isNumber(String s) {
+        return s.matches("^-?[0-9]+$");
+    }
+
+    /**
      * Returns true if {@code s} represents a non-zero unsigned integer
      * e.g. 1, 2, 3, ..., {@code Integer.MAX_VALUE} <br>
      * Will return false for any other non-null string input
