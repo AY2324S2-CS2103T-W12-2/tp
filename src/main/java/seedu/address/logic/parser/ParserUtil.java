@@ -44,11 +44,8 @@ public class ParserUtil {
         if (trimmedIndex.isEmpty()) {
             throw new ParseException(MESSAGE_MISSING_INDEX);
         }
-        if (!StringUtil.isNumber(trimmedIndex)) {
-            throw new ParseException(MESSAGE_INDEX_NOT_A_NUMBER);
-        }
         if (!StringUtil.isNonZeroUnsignedInteger(trimmedIndex)) {
-            if (trimmedIndex.startsWith("-") || trimmedIndex.equals("0")) {
+            if (trimmedIndex.startsWith("-") || trimmedIndex.equals("0") || !StringUtil.isNumber(trimmedIndex)) {
                 throw new ParseException(MESSAGE_INVALID_INDEX);
             }
             throw new ParseException(MESSAGE_TOO_LARGE_INDEX);
