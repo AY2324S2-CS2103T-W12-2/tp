@@ -9,7 +9,6 @@ import static seedu.address.testutil.TypicalStudents.ALICE;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Arrays;
 import java.util.function.Predicate;
 
@@ -93,8 +92,11 @@ public class AddCommandTest {
 
     @Test
     public void execute_moduleTimingClash_throwsCommandException() {
-        Student validStudentWithModuleTimings = new StudentBuilder().withModuleTimings(TypicalStudents.getTypicalModuleTimings()).build();
+        Student validStudentWithModuleTimings = new StudentBuilder().withModuleTimings(
+                TypicalStudents.getTypicalModuleTimings()
+            ).build();
         ModuleTiming clashTiming = TypicalStudents.getTypicalModuleTimings().get(0);
+
         ModelStubAcceptingStudentAdded modelStub = new ModelStubAcceptingStudentAdded() {
             @Override
             public boolean doesStudentModuleTimingClash(Student s, ModuleTiming t) {
@@ -111,9 +113,18 @@ public class AddCommandTest {
                 return true;
             }
         };
+
         modelStub.addStudent(validStudentWithModuleTimings);
-        AddStudentModuleTimingCommand addCommand = new AddStudentModuleTimingCommand(Index.fromZeroBased(0), new ModuleCode("CS2103T"), clashTiming);
-        assertThrows(CommandException.class, AddStudentModuleTimingCommand.MESSAGE_MODULE_TIMING_CLASH, () -> addCommand.execute(modelStub));
+        AddStudentModuleTimingCommand addCommand = new AddStudentModuleTimingCommand(
+            Index.fromZeroBased(0),
+            new ModuleCode("CS2103T"),
+            clashTiming
+        );
+
+        assertThrows(
+            CommandException.class,
+            AddStudentModuleTimingCommand.MESSAGE_MODULE_TIMING_CLASH, () -> addCommand.execute(modelStub)
+        );
     }
 
     /**
