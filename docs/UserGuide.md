@@ -195,6 +195,7 @@ You should see something like this
 2. We just had a chat with our friend Taufiq, and found out that he is taking the modules `CS2103T` and `CS20?` next semester. You remember that it's the Data Structures module but don't remember the exact module code. Firstly, lets add him to our contacts list. Since he Rock Climbs, lets add these details as tags into the application.
   
   Taufiq's Details: 
+
   | Field   | Value                      |
   | ------- | -------------------------- |
   | Name    | Taufiq Mohammed            |
@@ -676,8 +677,9 @@ Furthermore, certain edits can cause the ModContacts to behave in unexpected way
 
 ---
 # Glossary
+
 | Glossary Term | Definition                                                                                                                  |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| --- | --- |
 | CLI           | Command Line Interface, the text-based interface for interacting with ModContacts.                                          |
 | GUI           | Graphical User Interface, the visual interface for interacting with ModContacts.                                            |
 | Command       | The instruction given to ModContacts to perform a specific action.                                                          |
@@ -686,7 +688,8 @@ Furthermore, certain edits can cause the ModContacts to behave in unexpected way
 | SoC           | School of Computing, the faculty in NUS that ModContacts is designed for.                                                   |
 | field         | A piece of information that can be added to a command. e.g. `n/John Doe` has the field John Doe, with the prefix `n/`.      |
 | camel casing   | A casing format where words are not separated by whitespaces. Words are joined together and the first letter of each word, except the first one, is capital. Example: "thisIsCamelCasing" is "this is camel casing" in camel casing.
---------------------------------------------------------------------------------------------------------------------
+
+---
 
 ## Known issues
 
@@ -713,4 +716,3 @@ Furthermore, certain edits can cause the ModContacts to behave in unexpected way
 | [**Search Module**](#find-friends-with-modules-module_search)             | `search m/MODULE_CODE` <br> e.g. `search m/CS2103T`                                                                                                                   |
 | [**Clear**](#clearing-all-entries--clear)                                 | `clear`                                                                                                                                                               |
 | [**Exit**](#exiting-the-program--exit)                                    | `exit`                                                                                                                                                                |
-|                                                                           |
