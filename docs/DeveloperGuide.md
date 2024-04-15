@@ -15,7 +15,8 @@ title: Developer Guide
 <a id="acknowledgements"></a>
 ## **Acknowledgements**
 
-* {list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well}
+* The development team enabled GitHub Copilot code completions when working on code that followed similar structure to the rest of the project, such that learning was not hindered and productivity was boosted.
+* GitHub Copilot inline code generation was also used to generate JavaDoc comments, which were then customised to our desired level of description detail.
 
 --------------------------------------------------------------------------------------------------------------------
 
