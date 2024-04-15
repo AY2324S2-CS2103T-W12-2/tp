@@ -477,16 +477,19 @@ testers are expected to do more *exploratory* testing.
 
    1. Download the jar file and copy into an empty folder
 
-   1. Double-click the jar file Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
+   2. Opening the app:
+      1. **If you are using Windows:** Simply double-click on `modcontacts.jar` within your file explorer and a GUI similar to what is shown below should appear!
+      2. **If you are using MacOS / Linux:** Open a terminal window. Navigate to the folder containing `modcontacts.jar` using the `cd [relative/absolute folder path]` command. Then run `java -jar modcontacts.jar`.
 
-1. Saving window preferences
+For a more comprehensive quick start guide, refer to the [quick start section in our User Guide.](UserGuide/#quick-start)
+
+2. Saving window preferences
 
    1. Resize the window to an optimum size. Move the window to a different location. Close the window.
 
-   1. Re-launch the app by double-clicking the jar file.<br>
+   2. Re-launch the app by double-clicking the jar file.<br>
        Expected: The most recent window size and location is retained.
 
-1. _{ more test cases …​ }_
 
 ### Deleting a student
 
