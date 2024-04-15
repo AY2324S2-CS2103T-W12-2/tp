@@ -164,7 +164,7 @@ This section describes some noteworthy details on how certain features are imple
 
 Adding a class to a student in ModContacts is done by the command `add_timing i/1 m/CS2103T d/Mon st/0800 et/1200`
 
-The entry point for this command is when the `LogicManager` parses the command, gets a `AddStudentModuleCommand`, 
+The entry point for this command is when the `LogicManager` parses the command, gets a `AddStudentModuleCommand`,
 and then executes it.
 
 `AddStudentModuleCommand` performs some validations, then adds the `ModuleTiming` to the designated
@@ -265,11 +265,11 @@ _{Explain here how the data archiving feature will be implemented}_
 
 ### Handling of Modules
 #### Proposed Implementation
-The implementation is facilitated by the `JsonModuleMapStorage`. This implements the `ModuleMapStorage`, an interface which defines functions to retrieve the module map from storage into Memory. 
+The implementation is facilitated by the `JsonModuleMapStorage`. This implements the `ModuleMapStorage`, an interface which defines functions to retrieve the module map from storage into Memory.
 - `JsonModuleMapStorage#readModuleMap`
 
-This operation is exposed in Storage as `ReadModuleMap`, which allows the `ModelManager` to populate its `ModuleMap` with data from the embedded file. 
-With the model manager having the ModuleMap, this can now be accessed by the `Commands` in the `logic` package. 
+This operation is exposed in Storage as `ReadModuleMap`, which allows the `ModelManager` to populate its `ModuleMap` with data from the embedded file.
+With the model manager having the ModuleMap, this can now be accessed by the `Commands` in the `logic` package.
 
 ### Handling of Student Module Allocation
 #### Proposed Implementation
