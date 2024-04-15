@@ -16,10 +16,13 @@ import java.util.Arrays;
 import java.util.List;
 
 import seedu.address.model.AddressBook;
+import seedu.address.model.module.Day;
 import seedu.address.model.module.Description;
 import seedu.address.model.module.Module;
 import seedu.address.model.module.ModuleCode;
 import seedu.address.model.module.ModuleMap;
+import seedu.address.model.module.ModuleTiming;
+import seedu.address.model.module.Timing;
 import seedu.address.model.module.Title;
 import seedu.address.model.student.Student;
 
@@ -96,6 +99,23 @@ public class TypicalStudents {
                         + "Artificial Intelligence (AI) and Machine Learning (ML)")
         ));
         return moduleMap;
+    }
+
+    public static List<ModuleTiming> getTypicalModuleTimings() {
+        return new ArrayList<>(Arrays.asList(
+                new ModuleTiming(
+                        new ModuleCode("CS2103T"),
+                        new Day("Wed"),
+                        new Timing("1000"),
+                        new Timing("1200")
+                ),
+                new ModuleTiming(
+                        new ModuleCode("CS2103T"),
+                        new Day("Fri"),
+                        new Timing("1200"),
+                        new Timing("1400")
+                )
+        ));
     }
 
     public static List<Student> getTypicalStudents() {
