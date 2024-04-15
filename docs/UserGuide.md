@@ -115,7 +115,7 @@ A command is what you type into the app to execute your intentions (Adding a `Fr
 
 Here are some examples of commands that you'd be using:
 
-- `add n/Aditya p/98765432`
+- `add n/Aditya p/98765432 e/adityab4@u.nus.edu a/2 College Ave West, Singapore 138607`
 
 - `add_module i/1 m/MA2001`
 
@@ -124,7 +124,7 @@ Here are some examples of commands that you'd be using:
 You may notice a pattern here, and here is a rough breakdown of what a command composes of. Let's use the first example!
 
 ```
-add n/Aditya p/98765432
+add n/Aditya p/98765432 e/adityab4@u.nus.edu a/2 College Ave West, Singapore 138607
 ```
 
 Our command composes of:
@@ -133,17 +133,18 @@ Our command composes of:
 
    This is the first word of your command that carries the intention of your action! Examples would be using `add` when you want to add a `Friend`, `add_module` when you want to add a `Module` to your `Friend`, so on and so forth!
 
-2. Prefixes (`n/Aditya p/98765432`)
+2. Prefixes (`n/Aditya p/98765432 e/adityab4@u.nus.edu a/2 College Ave West, Singapore 138607`)
 
    Prefixes are additional information that you add to your command. For example, when adding a friend you would want to add their **name** and their **email**.
 
-   We can use Prefixes to accomplish this! They are usually marked with an unique identifier (`n/` for **name** and `p/` for **phone number**). You can then add your values after the identifiers! (`Aditya` is the value supplied for the **name** when you type `n/Aditya`).
+   We can use Prefixes to accomplish this! They are usually marked with an unique identifier (`n/` for **name**, `p/` for **phone number**, etc). You can then add your values after the identifiers! (`Aditya` is the value supplied for the **name** when you type `n/Aditya`).
 
    **(P.S)** Different commands have different prefixes! Check out the **[Features](#Features)** section to see what prefixes exist for each command.
 
 ### Summary
 
-In summary, what this command (`add n/Aditya p/98765432`) does is that it adds a `Friend` whose name is `Aditya` and whose email is `e123456@u.nus.edu`.
+In summary, what this command (`add n/Aditya p/98765432 e/adityab4@u.nus.edu a/2 College Ave West, Singapore 138607`) 
+does is that it adds a `Friend` whose name is `Aditya`, has a phone number `98765432`, has an email is `adityab4@u.nus.edu` and stays at the address `2 College Ave West, Singapore 138607` .
 
 <div markdown="block" class="alert alert-info">
 
