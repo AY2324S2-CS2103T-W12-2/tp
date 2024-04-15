@@ -50,7 +50,7 @@ It is great to see that you're interested in using ModContacts!
 
 Head to the [Getting Started](#Getting-Started) section and follow the guide to get ModContacts up and running!
 
-Then check out some [Features](#Features), and the handy [Command Summary](#command-summary).
+Then check out the [Tutorial](#Tutorial) some [Features](#Features), and the handy [Command Summary](#command-summary).
 
 ### Experienced Users
 
@@ -60,6 +60,16 @@ Head over to the [Command Summary](#command-summary), [FAQ](#faq) or [Troublesho
 
 The guide includes information on how users can effectively navigate the document, clarifies the meaning of icons and formatting used, and provides guidance on understanding features, functions, or commands.
 These can be quickly referenced from the [Table of Contents](#Table-of-Contents).
+
+## Conventions
+|                      | Description                                                             |
+| -------------------- | ----------------------------------------------------------------------- |
+| [Link](#conventions) | These are links to sections within the user guide                       |
+| `Command`            | Commands are represented with this text                                 |
+| :bulb:               | These are tips that might be useful during the operation of ModContacts |
+| :exclamation:        | These are warnings to take note of during the operation of ModContacts  |
+| `m/FIELD`            | These are required [fields](#glossary) in a command                     |
+| `[i/FIELD]`          | These are optional [fields](#glossary) in a command                     |
 
 ---
 
@@ -89,7 +99,9 @@ Follow this guide for your OS of choice:
 For MacOS and Linux users: If you are new to using the terminal, [this guide](https://riptutorial.com/terminal/example/26023/basic-navigation-commands) may be useful for navigating to the folder in step 3.
 </div>
 
-![Ui](images/Ui.png)
+On First launch, the app should look like this:
+
+![First Launch](images/FirstLaunch.png)
 
 ### Usage
 
@@ -543,7 +555,7 @@ If no friends are found with the specified module, the message "0 students liste
 However, if an invalid module code is given, an error message will show up, informing you that the module code is invalid and a valid module code can be found using the `list_modules` command.
 </div>
 
-## Deleting a student : `delete`
+## Deleting a friend : `delete`
 
 Deletes the specified friend from the mod contacts list.
 
@@ -590,14 +602,15 @@ Furthermore, certain edits can cause the ModContacts to behave in unexpected way
 
 ---
 # Glossary
-| Glossary Term | Definition                                                                                          |
-| ------------- | --------------------------------------------------------------------------------------------------- |
-| CLI           | Command Line Interface, the text-based interface for interacting with ModContacts.                  |
-| GUI           | Graphical User Interface, the visual interface for interacting with ModContacts.                    |
-| Command       | The instruction given to ModContacts to perform a specific action.                                  |
-| Prefix        | A 1 character keyword, such as `m/`, `i/` that is used to specify the type of data for the command. |
-| NUS           | National University of Singapore, the university that ModContacts is designed for.                  |
-| SoC           | School of Computing, the faculty in NUS that ModContacts is designed for.                           |
+| Glossary Term | Definition                                                                                                                  |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| CLI           | Command Line Interface, the text-based interface for interacting with ModContacts.                                          |
+| GUI           | Graphical User Interface, the visual interface for interacting with ModContacts.                                            |
+| Command       | The instruction given to ModContacts to perform a specific action.                                                          |
+| Prefix        | A **1** letter keyword, with a `/` at the end, such as `m/`, `i/` that is used to specify the type of data for the command. |
+| NUS           | National University of Singapore, the university that ModContacts is designed for.                                          |
+| SoC           | School of Computing, the faculty in NUS that ModContacts is designed for.                                                   |
+| field         | A piece of information that can be added to a command. e.g. `n/John Doe` has the field John Doe, with the prefix `n/`.      |
 --------------------------------------------------------------------------------------------------------------------
 
 ## Known issues
