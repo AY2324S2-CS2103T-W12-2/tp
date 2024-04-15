@@ -163,11 +163,40 @@ Classes used by multiple components are in the `seedu.addressbook.commons` packa
 
 This section describes some noteworthy details on how certain features are implemented.
 
+### Finding free time between friends based on allocated module timings
+
+Finding free time between students is done through `find_free_time d/Wed st/1200 et/1400`.
+
+`LogicManager` first calls `AddressBookParser` which then runs `parse_command` and then calls
+`FindFreeTimeCommandParser` which then parses the arguments, validates them, and then creates
+a new `FindFreeTimeCommand` instance. The arguments passed in is then used within a newly `IsFreePredicate`
+instance within the `FindFreeTimeCommand` instance, and the `LogicManager` then executes it.
+
+This then calls the existing `updateFilteredStudentList`with the `IsFreePredicate` within the `Model` instance.
+
+The following is the sequence diagram for this example.
+
+<img src="diagrams/FindFreeTimeSequenceDiagram.png" />
+
+#### Design Considerations
+
+Well, it was rather straightforward to implement this design because it has extreme similarities to the `FindCommand`
+that already existed within the AB3. Only tough parts were the filtering of conditions to ensure the
+time range stated doesn't overlap with the module timings of the students within the list.
+
+* **Alternative 1 (current choice):** Re-use code from `FindCommand` sequence.
+    * Pros: Easy to implement.
+    * Cons: Had to reconfigure the code to match our usecase.
+
+In short, this was the straightforward options with no backlash as it was a insanely easy command to create
+considering that existing groundwork has been laid. No issues has been faced with the implementation of the design
+other than rough hiccups (i.e allowing end time to be earlier than start time)
+
 ### Adding a ModuleTiming to a Student
 
 Adding a class to a student in ModContacts is done by the command `add_timing i/1 m/CS2103T d/Mon st/0800 et/1200`
 
-The entry point for this command is when the `LogicManager` parses the command, gets a `AddStudentModuleCommand`, 
+The entry point for this command is when the `LogicManager` parses the command, gets a `AddStudentModuleCommand`,
 and then executes it.
 
 `AddStudentModuleCommand` performs some validations, then adds the `ModuleTiming` to the designated
