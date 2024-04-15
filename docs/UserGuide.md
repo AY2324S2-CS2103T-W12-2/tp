@@ -113,7 +113,9 @@ On First launch, the app should look like this:
    2. `Help` shows you a pop-up, using which you can access the User Guide.
 2. [CLI](#glossary) / Input: This is where you enter [commands](#what-is-a-command) to interact with the app.
 3. Command output panel: This is where you would see the output of the commmand that you have entered in the CLI.
-4. Filtered contact list: This is the core of the app. Here you will see a list of your contacts, that you can filter using commands [explained in a later section.](#features)
+4. Filtered contact list: This is the main information panel of the app. Here you will see a list of your contacts, that you can filter using commands.
+   - Filtering the list is done using commands like [`find`](#locating-friends-by-name-find) and [`find_free_time`](#find-friends-who-are-free-to-meet-find_free_time), which change the filtered contact list by reducing the number of contacts displayed.
+   - After this, when you use other commands like [`edit`](#editing-a-friend--edit), the command inputs are based on the contacts that are currently visible in the filtered contact list. You will learn more about this [in a later section.](#features)
 5. Name, Number, Module with timings: These are the details for a particular contact in the filtered contact list.
 
 ### What is a Command?
