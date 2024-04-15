@@ -50,7 +50,7 @@ It is great to see that you're interested in using ModContacts!
 
 Head to the [Getting Started](#Getting-Started) section and follow the guide to get ModContacts up and running!
 
-Then check out some [Features](#Features), and the handy [Command Summary](#command-summary).
+Then check out the [Tutorial](#Tutorial) some [Features](#Features), and the handy [Command Summary](#command-summary).
 
 ### Experienced Users
 
@@ -60,6 +60,16 @@ Head over to the [Command Summary](#command-summary), [FAQ](#faq) or [Troublesho
 
 The guide includes information on how users can effectively navigate the document, clarifies the meaning of icons and formatting used, and provides guidance on understanding features, functions, or commands.
 These can be quickly referenced from the [Table of Contents](#Table-of-Contents).
+
+## Conventions
+|                      | Description                                                             |
+| -------------------- | ----------------------------------------------------------------------- |
+| [Link](#conventions) | These are links to sections within the user guide                       |
+| `Command`            | Commands are represented with this text                                 |
+| :bulb:               | These are tips that might be useful during the operation of ModContacts |
+| :exclamation:        | These are warnings to take note of during the operation of ModContacts  |
+| `m/FIELD`            | These are required [fields](#glossary) in a command                     |
+| `[i/FIELD]`          | These are optional [fields](#glossary) in a command                     |
 
 ---
 
@@ -89,11 +99,13 @@ Follow this guide for your OS of choice:
 For MacOS and Linux users: If you are new to using the terminal, [this guide](https://riptutorial.com/terminal/example/26023/basic-navigation-commands) may be useful for navigating to the folder in step 3.
 </div>
 
-![Ui](images/Ui.png)
+On First launch, the app should look like this:
+
+![First Launch](images/FirstLaunch.png)
 
 ### Usage
 
-Here we will probably have images of modcontacts showing what the command box is, where the data is shown,
+TODO: Here we will probably have images of modcontacts showing what the command box is, where the data is shown,
 images ideally should have labels and what not. Show a sample command usage, maybe add a friend. IMAGES.
 
 ### What is a Command?
@@ -274,7 +286,7 @@ Format: `add_module i/INDEX m/MODULE_CODE`
 - The `MODULE_CODE` refers to the module code of the module you intend to add
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-  If you are unsure of a module code, you can use <a href="https://www.nusmods.com">NUS Mods</a> to find it!
+  If you are unsure of a module code, you can use [List Modules](#learn-more-about-modules-list_modules) to find it!
 </div>
 
 Examples:
@@ -503,17 +515,45 @@ If the command is improperly formatted or certain parameters are missing the app
 
 ## Learn more about modules: `list_modules`
 
-Gets more information on the modules in ModContacts.
+List Modules allows you to search for the available modules in NUS and get its description. 
 
 Format: `list_modules m/MODULE_CODE`
 
-- The `MODULE_CODE` refers to the module code of the module you intend to add
+* The `MODULE_CODE` refers to the *prefix* or the first few characters of the module you intend to search. This search **case insensitive**, which means searching with `m/CS2103` and `m/cs2103` will yield the same results.
+
+For example, you can search for all modules starting with `CS21` with the command `list_modules m/cs21` and it will list all modules in NUS starting with the given module code.
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+This command is useful when you're adding a friend to the addressbook. If you only remember the first few characters of their module code, you can search it up and read the descriptions to identify the correct module.
+</div>
+
+![List Modules](images/ListModules.png)
+
+<div markdown="span" class="alert alert-warning">:exclamation: **Caution:**
+
+If no valid modules are found, the message "No modules found with prefix `[MODULE_CODE]`" will be displayed.
+</div>
 
 ## Find friends with modules: `module_search`
 
-Finds friends who are taking the specified module.
+Looking for buddies to discuss schoowork? Finds friends who are taking the specified module.
 
 Format: `module_search m/MODULE_CODE`
+
+* The `MODULE_CODE` refers to the **FULL** module you intend to search. This is `case insensitive`, which means searching with `m/CS2103T` and `m/cs2103T` will yield the same results.
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+If you cannot remember the full module code, [list_modules](#learn-more-about-modules-list_modules) can be used to find the correct module
+</div>
+
+![Module Search](images/ModuleSearch.png)
+
+<div markdown="span" class="alert alert-warning">:exclamation: **Caution:**
+
+If no friends are found with the specified module, the message "0 students listed" will be displayed.
+
+However, if an invalid module code is given, an error message will show up, informing you that the module code is invalid and a valid module code can be found using the `list_modules` command.
+</div>
 
 ## Deleting a friend : `delete`
 
@@ -561,6 +601,17 @@ Furthermore, certain edits can cause the ModContacts to behave in unexpected way
 </div>
 
 ---
+# Glossary
+| Glossary Term | Definition                                                                                                                  |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| CLI           | Command Line Interface, the text-based interface for interacting with ModContacts.                                          |
+| GUI           | Graphical User Interface, the visual interface for interacting with ModContacts.                                            |
+| Command       | The instruction given to ModContacts to perform a specific action.                                                          |
+| Prefix        | A **1** letter keyword, with a `/` at the end, such as `m/`, `i/` that is used to specify the type of data for the command. |
+| NUS           | National University of Singapore, the university that ModContacts is designed for.                                          |
+| SoC           | School of Computing, the faculty in NUS that ModContacts is designed for.                                                   |
+| field         | A piece of information that can be added to a command. e.g. `n/John Doe` has the field John Doe, with the prefix `n/`.      |
+--------------------------------------------------------------------------------------------------------------------
 
 ## Known issues
 
@@ -570,12 +621,14 @@ Furthermore, certain edits can cause the ModContacts to behave in unexpected way
 
 # Command summary
 
-| Action     | Format, Examples                                                                                                                                                      |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Add**    | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague` |
-| **Clear**  | `clear`                                                                                                                                                               |
-| **Delete** | `delete INDEX`<br> e.g., `delete 3`                                                                                                                                   |
-| **Edit**   | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                           |
-| **Find**   | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                            |
-| **List**   | `list`                                                                                                                                                                |
-| **Help**   | `help`                                                                                                                                                                |
+| Action                                                        | Format, Examples                                                                                                                                                      |
+| ------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [**Add**](#adding-a-module-add_module)                        | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague` |
+| [**Clear**](#clearing-all-entries--clear)                     | `clear`                                                                                                                                                               |
+| [**Delete**](#deleting-a-module-delete_module)                | `delete INDEX`<br> e.g., `delete 3`                                                                                                                                   |
+| [**Edit**](#editing-a-student--edit)                          | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                           |
+| [**Find**](#locating-students-by-name-find)                   | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                            |
+| [**List**](#listing-all-students--list)                       | `list`                                                                                                                                                                |
+| **Help**                                                      | `help`                                                                                                                                                                |
+| [**List Modules**](#learn-more-about-modules-list_modules)    | `list_modules m/MODULE_CODE` <br> e.g. `list_modules m/cs21`                                                                                                          |
+| [**Search Module**](#find-friends-with-modules-module_search) | `search m/MODULE_CODE` <br> e.g. `search m/CS2103T`                                                                                                                   |
