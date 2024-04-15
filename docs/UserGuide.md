@@ -9,6 +9,8 @@ Hello NUS School of Computing (SoC) students! Welcome to the User Guide for **Mo
 **ModContacts** is a desktop app for keeping track of your peers and the modules that they take so that you can keep in
 contact with them amidst your journey in NUS!
 
+<div style="page-break-after: always;"></div>
+
 # Table of Contents
 
 - TOC
@@ -73,7 +75,7 @@ These can be quickly referenced from the [Table of Contents](#table-of-contents)
 | `[i/FIELD]`          | These are optional [fields](#glossary) in a command                     |
 
 ---
-
+<div style="page-break-after: always;"></div>
 # Getting Started
 
 ## Prerequisites
@@ -85,7 +87,7 @@ Follow this guide for your OS of choice:
 - [Windows](https://docs.oracle.com/en/java/javase/11/install/installation-jdk-microsoft-windows-platforms.html#GUID-A7E27B90-A28D-4237-9383-A58B416071CA)
 - [MacOS](https://docs.oracle.com/en/java/javase/11/install/installation-jdk-macos.html#GUID-2FE451B0-9572-4E38-A1A5-568B77B146DE)
 - [Linux](https://docs.oracle.com/en/java/javase/11/install/installation-jdk-linux-platforms.html#GUID-737A84E4-2EFF-4D38-8E60-3E29D1B884B8)
-
+<div style="page-break-after: always;"></div>
 ## Quick start
 
 1. Ensure you have Java `11` or above installed in your computer from the [Prerequisites](#prerequisites) Section.
@@ -102,8 +104,9 @@ For MacOS and Linux users: If you are new to using the terminal, [this guide](ht
 
 On First launch, the app should look like this:
 
-![First Launch](images/FirstLaunch.png)
-
+<img src="./images/FirstLaunch.png" width=550 />
+<!-- ![First Launch](images/FirstLaunch.png) -->
+<div style="page-break-after: always;"></div>
 ### Usage
 
 ![Annotated UI](images/AnnotatedUi.png)
@@ -149,7 +152,7 @@ Our command composes of:
    We can use Prefixes to accomplish this! They are usually marked with an unique identifier (`n/` for **name**, `p/` for **phone number**, etc). You can then add your values after the identifiers! (`Aditya` is the value supplied for the **name** when you type `n/Aditya`).
 
    **(P.S)** Different commands have different prefixes! Check out the **[Features](#features)** section to see what prefixes exist for each command.
-
+<div style="page-break-after: always;"></div>
 ### Summary
 
 In summary, what this command (`add n/Aditya p/98765432 e/adityab4@u.nus.edu a/2 College Ave West, Singapore 138607`)
@@ -182,7 +185,7 @@ Refer to the [Features](#features) below for details of each command.
 [Back to Table of Contents](#table-of-contents)
 
 ---
-
+<div style="page-break-after: always;"></div>
 ## Tutorial
 Lets run through the first few steps of using ModContacts to get you started!
 
@@ -254,7 +257,7 @@ Type the following commands:
 This tutorial is **not exhaustive** and is just a preview of some of the commands you can use in ModContacts. For a full list of commands with a detailed explanation, refer to the [Features](#features) section and for a quick overview of all the commands available, you can look at the [Command Summary](#command-summary).
 
 ---
-
+<div style="page-break-after: always;"></div>
 # Features
 
 [//]: # "### Viewing help : `help`"
@@ -666,7 +669,7 @@ Exits the program.
 Format: `exit`
 
 ---
-
+<div style="page-break-after: always;"></div>
 # FAQ
 
 **Q**: How do I transfer my data to another Computer?<br>
@@ -684,6 +687,7 @@ Furthermore, certain edits can cause the ModContacts to behave in unexpected way
 </div>
 
 ---
+<div style="page-break-after: always;"></div>
 # Glossary
 
 | Glossary Term | Definition                                                                                                                  |
@@ -704,7 +708,6 @@ Furthermore, certain edits can cause the ModContacts to behave in unexpected way
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 
 ---
-
 # Command summary
 
 | Action                                                                    | Format, Examples                                                                                                                                                      |
