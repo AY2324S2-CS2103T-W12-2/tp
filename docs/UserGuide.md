@@ -152,8 +152,8 @@ Our command composes of:
 
 ### Summary
 
-In summary, what this command (`add n/Aditya p/98765432 e/adityab4@u.nus.edu a/2 College Ave West, Singapore 138607`) 
-does is that it adds a `Friend` whose name is `Aditya`, has a phone number `98765432`, has an email is `adityab4@u.nus.edu` and stays at the address `2 College Ave West, Singapore 138607` .
+In summary, what this command (`add n/Aditya p/98765432 e/adityab4@u.nus.edu a/2 College Ave West, Singapore 138607`)
+does is that it adds a `Friend` whose name is `Aditya`, has a phone number `98765432`, has an email is `adityab4@u.nus.edu` and stays at the address `2 College Ave West, Singapore 138607`.
 
 <div markdown="block" class="alert alert-info">
 
@@ -186,7 +186,7 @@ Refer to the [Features](#features) below for details of each command.
 ## Tutorial
 Lets run through the first few steps of using ModContacts to get you started!
 
-Lets start by clearing the data that comes with the app by default. 
+Lets start by clearing the data that comes with the app by default.
 1. Run the `clear` command in the input box to clear the data.
 
 Be careful! This will delete all contacts from ModContacts. Since we don't have any contacts of our own yet, this is a safe command to run.
@@ -195,17 +195,18 @@ You should see something like this
 ![Clear Contacts](images/tutorial/clear.png)
 
 2. We just had a chat with our friend Taufiq, and found out that he is taking the modules `CS2103T` and `CS20?` next semester. You remember that it's the Data Structures module but don't remember the exact module code. Firstly, lets add him to our contacts list. Since he Rock Climbs, lets add these details as tags into the application.
-  
-  Taufiq's Details: 
+
+  Taufiq's Details:
+
   | Field   | Value                      |
-  | ------- | -------------------------- |
+  | ------- |----------------------------|
   | Name    | Taufiq Mohammed            |
   | Phone   | 98765432                   |
   | Email   | taufiq@taufiq.com          |
   | Address | 123, Clementi Road, 123456 |
-  | Tags    | Friend, RockClimbing       |
+  | Tags    | friend, rockClimbing       |
 
-  With this details, we'll run the command 
+  With this details, we'll run the command
   ```bash
   add n/Taufiq Mohammed p/81234567 e/taufiq@taufiq.com a/123, Clementi Road, 123456 t/friend t/rockClimbing
   ```
@@ -223,7 +224,7 @@ The `1` in the above command refers to the index of the friend in the list. Sinc
 
 ![List Modules](images/tutorial/list-modules.png)
 
-From this, we can read the descriptions and find out that the module we're looking for is `CS2040S`. Lets add that to Taufiq. `add_module i/1 m/CS2040S`. 
+From this, we can read the descriptions and find out that the module we're looking for is `CS2040S`. Lets add that to Taufiq. `add_module i/1 m/CS2040S`.
 
 Do note that if you try to add the same module again to the same person, it will give a warning that the module is already added.
 
@@ -591,7 +592,7 @@ If the command is improperly formatted or certain parameters are missing the app
 
 ## Learn more about modules: `list_modules`
 
-List Modules allows you to search for the available modules in NUS and get its description. 
+List Modules allows you to search for the available modules in NUS and get its description.
 
 Format: `list_modules m/MODULE_CODE`
 
@@ -678,8 +679,9 @@ Furthermore, certain edits can cause the ModContacts to behave in unexpected way
 
 ---
 # Glossary
+
 | Glossary Term | Definition                                                                                                                  |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| --- | --- |
 | CLI           | Command Line Interface, the text-based interface for interacting with ModContacts.                                          |
 | GUI           | Graphical User Interface, the visual interface for interacting with ModContacts.                                            |
 | Command       | The instruction given to ModContacts to perform a specific action.                                                          |
@@ -688,7 +690,8 @@ Furthermore, certain edits can cause the ModContacts to behave in unexpected way
 | SoC           | School of Computing, the faculty in NUS that ModContacts is designed for.                                                   |
 | field         | A piece of information that can be added to a command. e.g. `n/John Doe` has the field John Doe, with the prefix `n/`.      |
 | camel casing   | A casing format where words are not separated by whitespaces. Words are joined together and the first letter of each word, except the first one, is capital. Example: "thisIsCamelCasing" is "this is camel casing" in camel casing.
---------------------------------------------------------------------------------------------------------------------
+
+---
 
 ## Known issues
 
@@ -715,4 +718,3 @@ Furthermore, certain edits can cause the ModContacts to behave in unexpected way
 | [**Search Module**](#find-friends-with-modules-module_search)             | `search m/MODULE_CODE` <br> e.g. `search m/CS2103T`                                                                                                                   |
 | [**Clear**](#clearing-all-entries--clear)                                 | `clear`                                                                                                                                                               |
 | [**Exit**](#exiting-the-program--exit)                                    | `exit`                                                                                                                                                                |
-|                                                                           |
