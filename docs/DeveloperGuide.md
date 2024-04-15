@@ -329,8 +329,6 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `*`      | thoughtful student | save the pronunciation of my friend's names              | know the proper way to say their names             |
 | `*`      | student            | share my profile with a QR code/email/telegram           | share my contact details with my friends           |
 
-*{More to be added}*
-
 ### Use cases
 
 (For all use cases below, the **System** is `ModContacts` and the **Actor** is the `student`, unless specified otherwise)
@@ -451,8 +449,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 1.  Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
 2.  Should be able to hold up to 100 students without a noticeable sluggishness in performance for typical usage.
-3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
-4.  The user interface should be intuitive enough for users who are not IT-savvy
+3.  All commands should execute within 1000 milliseconds.
+4.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+5.  The user interface should be intuitive enough for users who are not IT-savvy
 
 *{More to be added}*
 
