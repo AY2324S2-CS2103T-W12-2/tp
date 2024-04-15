@@ -2,13 +2,9 @@
 layout: page
 title: Developer Guide
 ---
-* Table of Contents
-- [Acknowledgements](#acknowledgements)
-- [Setting Up](#setting-up)
-- [Design](#design)
-- [Implementation](#implementation)
-- [Misc. Docs](#misc-documentation)
-- [Appendix](#appendix)
+# Table of Contents
+* TOC
+{:toc}
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -519,3 +515,22 @@ testers are expected to do more *exploratory* testing.
    1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
 
 1. _{ more test cases …​ }_
+
+--------------------------------------------------------------------------------------------------------------------
+
+## **Appendix: Planned Enhancements**
+
+Given below are Planned Enhancements that will be implemented in future versions of the app.
+
+
+### `view_email` and `view_address`
+The `add` command currently requires the user to enter an email and address, which are not displayed in the application due to lack of relevance. The `view_email` and `view_address` commands would address why this information was included in the `add` command syntax by allowing a user to view the added student's email and address by referring to a particular index.
+
+
+### Supporting text in multiple languages
+ModContacts currently supports input in English. This will be extended to more languages in future versions.
+
+**Note**: Attempting to input text in another language may produce unpredicatble behaviour in the current version of the app, and is to be done at the user's risk.
+
+### Supporting names with special characters
+ModContacts currently supports names without any special characters. This will be extended to support common Singaporean names containing "S/O" or "D/O" in future versions.
