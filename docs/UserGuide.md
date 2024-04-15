@@ -106,8 +106,15 @@ On First launch, the app should look like this:
 
 ### Usage
 
-TODO: Here we will probably have images of modcontacts showing what the command box is, where the data is shown,
-images ideally should have labels and what not. Show a sample command usage, maybe add a friend. IMAGES.
+![Annotated UI](images/AnnotatedUi.png)
+
+1. Menubar: This is where you will find the `File` and `Help` options.
+   1. `File` provides you a menu, which contains an option to exit the app.
+   2. `Help` shows you a pop-up, using which you can access the User Guide.
+2. [CLI](#glossary) / Input: This is where you enter [commands](#what-is-a-command) to interact with the app.
+3. Command output panel: This is where you would see the output of the commmand that you have entered in the CLI.
+4. Filtered contact list: This is the core of the app. Here you will see a list of your contacts, that you can filter using commands [explained in a later section.](#features)
+5. Name, Number, Module with timings: These are the details for a particular contact in the filtered contact list.
 
 ### What is a Command?
 
