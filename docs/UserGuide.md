@@ -62,7 +62,8 @@ The guide includes information on how users can effectively navigate the documen
 These can be quickly referenced from the [Table of Contents](#Table-of-Contents).
 
 ## Conventions
-|                      | Description                                                             |
+
+| Convention           | Description                                                             |
 | -------------------- | ----------------------------------------------------------------------- |
 | [Link](#conventions) | These are links to sections within the user guide                       |
 | `Command`            | Commands are represented with this text                                 |
