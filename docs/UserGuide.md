@@ -93,7 +93,7 @@ For MacOS and Linux users: If you are new to using the terminal, [this guide](ht
 
 ### Usage
 
-Here we will probably have images of modcontacts showing what the command box is, where the data is shown,
+TODO: Here we will probably have images of modcontacts showing what the command box is, where the data is shown,
 images ideally should have labels and what not. Show a sample command usage, maybe add a friend. IMAGES.
 
 ### What is a Command?
@@ -274,7 +274,7 @@ Format: `add_module i/INDEX m/MODULE_CODE`
 - The `MODULE_CODE` refers to the module code of the module you intend to add
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-  If you are unsure of a module code, you can use <a href="https://www.nusmods.com">NUS Mods</a> to find it!
+  If you are unsure of a module code, you can use [List Modules](#learn-more-about-modules-list_modules) to find it!
 </div>
 
 Examples:
@@ -503,19 +503,47 @@ If the command is improperly formatted or certain parameters are missing the app
 
 ## Learn more about modules: `list_modules`
 
-Gets more information on the modules in ModContacts.
+List Modules allows you to search for the available modules in NUS and get its description. 
 
 Format: `list_modules m/MODULE_CODE`
 
-- The `MODULE_CODE` refers to the module code of the module you intend to add
+* The `MODULE_CODE` refers to the *prefix* or the first few characters of the module you intend to search. This search **case insensitive**, which means searching with `m/CS2103` and `m/cs2103` will yield the same results.
+
+For example, you can search for all modules starting with `CS21` with the command `list_modules m/cs21` and it will list all modules in NUS starting with the given module code.
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+This command is useful when you're adding a friend to the addressbook. If you only remember the first few characters of their module code, you can search it up and read the descriptions to identify the correct module.
+</div>
+
+![List Modules](images/ListModules.png)
+
+<div markdown="span" class="alert alert-warning">:exclamation: **Caution:**
+
+If no valid modules are found, the message "No modules found with prefix `[MODULE_CODE]`" will be displayed.
+</div>
 
 ## Find friends with modules: `module_search`
 
-Finds friends who are taking the specified module.
+Looking for buddies to discuss schoowork? Finds friends who are taking the specified module.
 
 Format: `module_search m/MODULE_CODE`
 
-## Deleting a friend : `delete`
+* The `MODULE_CODE` refers to the **FULL** module you intend to search. This is `case insensitive`, which means searching with `m/CS2103T` and `m/cs2103T` will yield the same results.
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+If you cannot remember the full module code, [list_modules](#learn-more-about-modules-list_modules) can be used to find the correct module
+</div>
+
+![Module Search](images/ModuleSearch.png)
+
+<div markdown="span" class="alert alert-warning">:exclamation: **Caution:**
+
+If no friends are found with the specified module, the message "0 students listed" will be displayed.
+
+However, if an invalid module code is given, an error message will show up, informing you that the module code is invalid and a valid module code can be found using the `list_modules` command.
+</div>
+
+## Deleting a student : `delete`
 
 Deletes the specified friend from the mod contacts list.
 
@@ -561,6 +589,9 @@ Furthermore, certain edits can cause the ModContacts to behave in unexpected way
 </div>
 
 ---
+# Glossary
+TODO: Insert terms for prefix, command, CLI, GUI, Field, SoC, NUS
+---
 
 ## Known issues
 
@@ -570,12 +601,14 @@ Furthermore, certain edits can cause the ModContacts to behave in unexpected way
 
 # Command summary
 
-| Action     | Format, Examples                                                                                                                                                      |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Add**    | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague` |
-| **Clear**  | `clear`                                                                                                                                                               |
-| **Delete** | `delete INDEX`<br> e.g., `delete 3`                                                                                                                                   |
-| **Edit**   | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                           |
-| **Find**   | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                            |
-| **List**   | `list`                                                                                                                                                                |
-| **Help**   | `help`                                                                                                                                                                |
+| Action                                                        | Format, Examples                                                                                                                                                      |
+| ------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [**Add**](#adding-a-module-add_module)                        | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague` |
+| [**Clear**](#clearing-all-entries--clear)                     | `clear`                                                                                                                                                               |
+| [**Delete**](#deleting-a-module-delete_module)                | `delete INDEX`<br> e.g., `delete 3`                                                                                                                                   |
+| [**Edit**](#editing-a-student--edit)                          | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                           |
+| [**Find**](#locating-students-by-name-find)                   | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                            |
+| [**List**](#listing-all-students--list)                       | `list`                                                                                                                                                                |
+| **Help**                                                      | `help`                                                                                                                                                                |
+| [**List Modules**](#learn-more-about-modules-list_modules)    | `list_modules m/MODULE_CODE` <br> e.g. `list_modules m/cs21`                                                                                                          |
+| [**Search Module**](#find-friends-with-modules-module_search) | `search m/MODULE_CODE` <br> e.g. `search m/CS2103T`                                                                                                                   |
