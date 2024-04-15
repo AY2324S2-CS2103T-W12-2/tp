@@ -5,7 +5,6 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_MODULE_CODE;
 
 import java.util.List;
 
-import seedu.address.commons.util.StringUtil;
 import seedu.address.logic.commands.Command;
 import seedu.address.logic.commands.CommandResult;
 import seedu.address.logic.commands.exceptions.CommandException;
@@ -38,7 +37,7 @@ public class ListModulesCommand extends Command {
         sb.append("List of modules with prefix: ").append(this.modulePrefix).append("\n");
         for (Module m : modules) {
             sb.append(m.getModuleCode().getCode()).append(" : ");
-            sb.append(StringUtil.truncate(m.getDescription().getValue(), 80)).append("\n");
+            sb.append(m.getDescription().getValue()).append("\n\n");
         }
         return new CommandResult(sb.toString());
     }
