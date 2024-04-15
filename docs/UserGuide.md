@@ -48,9 +48,9 @@ The ModContacts User Guide serves as a quick, efficient, all-in-one manual for b
 
 It is great to see that you're interested in using ModContacts!
 
-Head to the [Getting Started](#Getting-Started) section and follow the guide to get ModContacts up and running!
+Head to the [Getting Started](#getting-started) section and follow the guide to get ModContacts up and running!
 
-Then check out the [Tutorial](#Tutorial) some [Features](#Features), and the handy [Command Summary](#command-summary).
+Then check out the [Tutorial](#tutorial) some [Features](#features), and the handy [Command Summary](#command-summary).
 
 ### Experienced Users
 
@@ -59,7 +59,7 @@ Head over to the [Command Summary](#command-summary), [FAQ](#faq) or [Troublesho
 ## How should I use this guide?
 
 The guide includes information on how users can effectively navigate the document, clarifies the meaning of icons and formatting used, and provides guidance on understanding features, functions, or commands.
-These can be quickly referenced from the [Table of Contents](#Table-of-Contents).
+These can be quickly referenced from the [Table of Contents](#table-of-contents).
 
 ## Conventions
 
@@ -88,7 +88,7 @@ Follow this guide for your OS of choice:
 
 ## Quick start
 
-1. Ensure you have Java `11` or above installed in your computer from the [Prerequisites](#Prerequisites) Section.
+1. Ensure you have Java `11` or above installed in your computer from the [Prerequisites](#prerequisites) Section.
 
 2. Download the latest `modcontacts.jar` from [here](https://github.com/AY2324S2-CS2103T-W12-2/tp/releases).
 
@@ -139,7 +139,7 @@ Our command composes of:
 
    We can use Prefixes to accomplish this! They are usually marked with an unique identifier (`n/` for **name** and `p/` for **phone number**). You can then add your values after the identifiers! (`Aditya` is the value supplied for the **name** when you type `n/Aditya`).
 
-   **(P.S)** Different commands have different prefixes! Check out the **[Features](#Features)** section to see what prefixes exist for each command.
+   **(P.S)** Different commands have different prefixes! Check out the **[Features](#features)** section to see what prefixes exist for each command.
 
 ### Summary
 
@@ -234,7 +234,7 @@ Type the following commands:
 
 ![Find Free Time](images/tutorial/find-free-time.png)
 
-This tutorial is **not exhaustive** and is just a preview of some of the commands you can use in ModContacts. For a full list of commands with a detailed explanation, refer to the [Features](#Features) section and for a quick overview of all the commands available, you can look at the [Command Summary](#command-summary).
+This tutorial is **not exhaustive** and is just a preview of some of the commands you can use in ModContacts. For a full list of commands with a detailed explanation, refer to the [Features](#features) section and for a quick overview of all the commands available, you can look at the [Command Summary](#command-summary).
 
 ---
 
