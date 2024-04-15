@@ -174,6 +174,20 @@ The following is the sequence diagram for this example.
 
 <img src="images/AddModuleTimingSequenceDiagram.png" />
 
+### Deleting a ModuleTiming from a Student
+
+Deleting a class from a student in ModContacts is done using the command `delete_timing i/1 m/CS2103T d/Mon st/0800 et/1200`
+
+The entry point for this command is when the `LogicManager` parses the command, gets a `DeleteStudentModuleTimingCommand`,
+and then executes it.
+
+`DeleteStudentModuleTimingCommand` performs validations for valid Timings, and whether a student takes the module; then deletes the `ModuleTiming` from the designated
+`Student` in the `FilteredStudentList` via `Model#deleteModuleTimingFromStudent`.
+
+The following is the sequence diagram for this example.
+
+<img src="images/DeleteModuleTimingSequenceDiagram.png" />
+
 
 ### \[Proposed\] Undo/redo feature
 
