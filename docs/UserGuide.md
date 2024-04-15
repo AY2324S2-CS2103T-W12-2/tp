@@ -12,7 +12,7 @@ contact with them amidst your journey in NUS!
 # Table of Contents
 
 - TOC
-  {:toc}
+{:toc}
 
 ---
 
@@ -62,7 +62,8 @@ The guide includes information on how users can effectively navigate the documen
 These can be quickly referenced from the [Table of Contents](#Table-of-Contents).
 
 ## Conventions
-|                      | Description                                                             |
+
+| Convention           | Description                                                             |
 | -------------------- | ----------------------------------------------------------------------- |
 | [Link](#conventions) | These are links to sections within the user guide                       |
 | `Command`            | Commands are represented with this text                                 |
@@ -172,6 +173,71 @@ Refer to the [Features](#features) below for details of each command.
 
 ---
 
+## Tutorial
+Lets run through the first few steps of using ModContacts to get you started!
+
+Lets start by clearing the data that comes with the app by default. 
+1. Run the `clear` command in the input box to clear the data.
+
+Be careful! This will delete all contacts from ModContacts. Since we don't have any contacts of our own yet, this is a safe command to run.
+
+You should see something like this
+![Clear Contacts](images/tutorial/clear.png)
+
+2. We just had a chat with our friend Taufiq, and found out that he is taking the modules `CS2103T` and `CS20?` next semester. You remember that it's the Data Structures module but don't remember the exact module code. Firstly, lets add him to our contacts list. Since he Rock Climbs, lets add these details as tags into the application.
+  
+  Taufiq's Details: 
+  | Field   | Value                      |
+  | ------- | -------------------------- |
+  | Name    | Taufiq Mohammed            |
+  | Phone   | 98765432                   |
+  | Email   | taufiq@taufiq.com          |
+  | Address | 123, Clementi Road, 123456 |
+  | Tags    | Friend, RockClimbing       |
+
+  With this details, we'll run the command 
+  ```bash
+  add n/Taufiq Mohammed p/81234567 e/taufiq@taufiq.com a/123, Clementi Road, 123456 t/friend t/rockClimbing
+  ```
+  You can add multiple tags for each user. However, spaces in a tag are **not** supported. You'll need to add a `t/` prefix before each tag also.
+
+![Add a Friend](images/tutorial/add.png)
+
+3. We can now add the module `CS2103T` to Taufiq's list of modules. We'll use the command `add_module i/1 m/CS2103T` to add the module to Taufiq's list of modules.
+
+The `1` in the above command refers to the index of the friend in the list. Since Taufiq is the first friend in the list, he is at index 1.
+
+![Add a Module](images/tutorial/add-module.png)
+
+4. Now, since we're unsure which module Taufiq is taking, we can use the `list_modules` command to search for the module. We'll use the command `list_modules m/CS20` to search for modules starting with `CS20`.
+
+![List Modules](images/tutorial/list-modules.png)
+
+From this, we can read the descriptions and find out that the module we're looking for is `CS2040S`. Lets add that to Taufiq. `add_module i/1 m/CS2040S`. 
+
+Do note that if you try to add the same module again to the same person, it will give a warning that the module is already added.
+
+5.  Suppose you want to add the timing `1600h – 1800h` on Wednesday and `1400h - 1600h` on Thursday to the `CS2103T` and `0800h - 1000h` on Wednesday to the `CS2040S`  module Taufiq.
+
+Type the following commands:
+- `add_timing i/1 m/CS2103T d/Wed st/1600 et/1800`
+- `add_timing i/1 m/CS2103T d/Thu st/1400 et/1600`
+- `add_timing i/1 m/CS2040S d/Wed st/0800 et/1000`
+
+![Add Timing](images/tutorial/add-timing.png)
+
+6. Now, using the above commands, we can add the rest of our friends, their modules and its timings. You can use the `list` command to see the entire list of friends in the application
+
+![List](images/tutorial/list.png)
+
+7. Suppose that you're looking for friends to eat lunch with on Wednesday from `1200 - 1400`. With the command `find_free_time d/Wed st/1200 et/1400`, you can find friends who are free during that period.
+
+![Find Free Time](images/tutorial/find-free-time.png)
+
+This tutorial is **not exhaustive** and is just a preview of some of the commands you can use in ModContacts. For a full list of commands with a detailed explanation, refer to the [Features](#Features) section and for a quick overview of all the commands available, you can look at the [Command Summary](#command-summary).
+
+---
+
 # Features
 
 [//]: # "### Viewing help : `help`"
@@ -209,19 +275,19 @@ Suppose you want to add a friend with the following details:
 Type the following command:
 `add n/John Doe p/9991234 e/e1234567@u.nus.edu a/Address`
 
-![](/images/user-guide/add/example.png)
+![](images/user-guide/add/example.png)
 
 **On Success**
 
 If the command is inputted the correctly, a message should appear informing you that the command was successful and a new entry is created.
 
-![](/images/user-guide/add/correct.png)
+![](images/user-guide/add/correct.png)
 
 **On Error**
 
 If the command is improperly formatted or certain parameters are missing the app will show what fields are needed and how a properly inputted command should look like.
 
-![](/images/user-guide/add/wrong.png)
+![](images/user-guide/add/wrong.png)
 
 ## Listing all friends : `list`
 
@@ -233,7 +299,7 @@ Format: `list`
 
 A message should appear saying that all friends are being listed.
 
-![](/images/user-guide/list/example.png)
+![](images/user-guide/list/example.png)
 
 ## Editing a friend : `edit`
 
@@ -262,19 +328,19 @@ Let's change his name from `John Doe` to `Johnathan Doe`.
 Type the following command:
 `edit i/1 n/Johnathan Doe`
 
-![](/images/user-guide/edit/example.png)
+![](images/user-guide/edit/example.png)
 
 **On Success**
 
 If the command is inputted the correctly, a message should appear informing you that the command was successful and your friend's name has been edited.
 
-![](/images/user-guide/edit/correct.png)
+![](images/user-guide/edit/correct.png)
 
 **On Error**
 
 If the command is improperly formatted or certain parameters are missing the app will show what fields are needed and how a properly inputted command should look like. In this example we've accidentally written our `name` parameter as `nn/..` instead of `n/..`
 
-![](/images/user-guide/edit/wrong.png)
+![](images/user-guide/edit/wrong.png)
 
 ## Adding a Module: `add_module`
 
@@ -302,19 +368,19 @@ Let's add `CS2101` to them!
 Type the following command:
 `add_module i/1 m/CS2101`
 
-![](/images/user-guide/add-module/example.png)
+![](images/user-guide/add-module/example.png)
 
 **On Success**
 
 If the command is inputted the correctly, a message should appear informing you that the command was successful and the module has been added.
 
-![](/images/user-guide/add-module/correct.png)
+![](images/user-guide/add-module/correct.png)
 
 **On Error**
 
 If the command is improperly formatted or certain parameters are missing the app will show what fields are needed and how a properly inputted command should look like. In this example we've added a non-existent module code `MA200002`.
 
-![](/images/user-guide/add-module/wrong.png)
+![](images/user-guide/add-module/wrong.png)
 
 <div markdown="span" class="alert alert-warning">:bulb: **Reminder:**
 Module codes that aren't found in **NUSMods** will be considered invalid.
@@ -342,19 +408,19 @@ Let's remove `CS2101`
 Type the following command:
 `delete_module i/1 m/CS2101`
 
-![](/images/user-guide/delete-module/example.png)
+![](images/user-guide/delete-module/example.png)
 
 **On Success**
 
 If the command is inputted the correctly, a message should appear informing you that the command was successful and the module has been deleted. The changes should be reflected on the list as well.
 
-![](/images/user-guide/delete-module/correct.png)
+![](images/user-guide/delete-module/correct.png)
 
 **On Error**
 
 If the command is improperly formatted or certain parameters are missing the app will show what fields are needed and how a properly inputted command should look like. In this example we are trying to delete the module `CS2109` which was never added to the friend.
 
-![](/images/user-guide/delete-module/wrong.png)
+![](images/user-guide/delete-module/wrong.png)
 
 ## Adding a Module Timing: `add_timing`
 
@@ -383,19 +449,19 @@ Suppose you want to add the timing `1600h – 1800h` to the `CS2101` module for
 Type the following command:
 `add_timing i/1 m/CS2101 d/Wed st/1600 et/1800`
 
-![](/images/user-guide/add-timing/example.png)
+![](images/user-guide/add-timing/example.png)
 
 **On Success**
 
 If the command is inputted the correctly, a message should appear informing you that the command was successful and the timing has been added. The changes should be reflected on the list as well.
 
-![](/images/user-guide/add-timing/correct.png)
+![](images/user-guide/add-timing/correct.png)
 
 **On Error**
 
 If the command is improperly formatted or certain parameters are missing the app will show what fields are needed and how a properly inputted command should look like. In this example we used an incorrect time format (12h instead of 24h).
 
-![](/images/user-guide/add-timing/wrong.png)
+![](images/user-guide/add-timing/wrong.png)
 
 ## Deleting a Module Timing: `delete_timing`
 
@@ -420,19 +486,19 @@ Suppose you want to delete the timing `1600h – 1800h` to the `CS2101` module 
 Type the following command:
 `delete_timing i/1 m/CS2101 d/Wed st/1600 et/1800`
 
-![](/images/user-guide/delete-timing/example.png)
+![](images/user-guide/delete-timing/example.png)
 
 **On Success**
 
 If the command is inputted the correctly, a message should appear informing you that the command was successful and the timing has been deleted. The changes should be reflected on the list as well.
 
-![](/images/user-guide/delete-timing/correct.png)
+![](images/user-guide/delete-timing/correct.png)
 
 **On Error**
 
 If the command is improperly formatted or certain parameters are missing the app will show what fields are needed and how a properly inputted command should look like. In this example we inputted the wrong day (It should be `Wed` and not `Thu`) for the timing that we previously added.
 
-![](/images/user-guide/delete-timing/wrong.png)
+![](images/user-guide/delete-timing/wrong.png)
 
 ## Locating friends by name: `find`
 
@@ -458,19 +524,19 @@ Suppose you want to find your friend `John Doe`
 Type the following command:
 `find John`
 
-![](/images/user-guide/find/example.png)
+![](images/user-guide/find/example.png)
 
 **On Success**
 
 If the command is inputted the correctly, a message should appear informing you that the command was successful and how many friends whose names contains the keyword you are searching. A filtered list will then be shown showing who matches the name you are searching for.
 
-![](/images/user-guide/find/correct.png)
+![](images/user-guide/find/correct.png)
 
 **On Error**
 
 If the command is improperly formatted or certain parameters are missing the app will show what fields are needed and how a properly inputted command should look like. In this example we did not include the keyword to search for.
 
-![](/images/user-guide/find/wrong.png)
+![](images/user-guide/find/wrong.png)
 
 ## Find friends who are free to meet: `find_free_time`
 
@@ -494,24 +560,24 @@ Your two friends `Alice` and `Bob` are on ModContacts and these are their curren
 - `Alice` has a lesson from **1000h - 1200h**
 - `Bob` has a lesson from **1100h - 1300h**
 
-![](/images/user-guide/find-free-time/context.jpg)
+![](images/user-guide/find-free-time/context.jpg)
 
 Type the following command:
 `find_free_time d/Mon st/1200 et/1300`
 
-![](/images/user-guide/find-free-time/example.png)
+![](images/user-guide/find-free-time/example.png)
 
 **On Success**
 
 If the command is inputted the correctly, a message should appear informing you that the command was successful and how many friends whose names contains the keyword you are searching. A filtered list will then be shown showing which friends are free in the stipulated time.
 
-![](/images/user-guide/find-free-time/correct.png)
+![](images/user-guide/find-free-time/correct.png)
 
 **On Error**
 
 If the command is improperly formatted or certain parameters are missing the app will show what fields are needed and how a properly inputted command should look like. In this example we did not key in the day in the proper format (`Monday` instead of `Mon`)
 
-![](/images/user-guide/find-free-time/wrong.png)
+![](images/user-guide/find-free-time/wrong.png)
 
 ## Learn more about modules: `list_modules`
 
@@ -621,14 +687,21 @@ Furthermore, certain edits can cause the ModContacts to behave in unexpected way
 
 # Command summary
 
-| Action                                                        | Format, Examples                                                                                                                                                      |
-| ------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**Add**](#adding-a-module-add_module)                        | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague` |
-| [**Clear**](#clearing-all-entries--clear)                     | `clear`                                                                                                                                                               |
-| [**Delete**](#deleting-a-module-delete_module)                | `delete INDEX`<br> e.g., `delete 3`                                                                                                                                   |
-| [**Edit**](#editing-a-student--edit)                          | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                           |
-| [**Find**](#locating-students-by-name-find)                   | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                            |
-| [**List**](#listing-all-students--list)                       | `list`                                                                                                                                                                |
-| **Help**                                                      | `help`                                                                                                                                                                |
-| [**List Modules**](#learn-more-about-modules-list_modules)    | `list_modules m/MODULE_CODE` <br> e.g. `list_modules m/cs21`                                                                                                          |
-| [**Search Module**](#find-friends-with-modules-module_search) | `search m/MODULE_CODE` <br> e.g. `search m/CS2103T`                                                                                                                   |
+| Action                                                                    | Format, Examples                                                                                                                                                      |
+| ------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Help**                                                                  | `help`                                                                                                                                                                |
+| [**Add**](#adding-a-module-add_module)                                    | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague` |
+| [**List**](#listing-all-students--list)                                   | `list`                                                                                                                                                                |
+| [**Edit**](#editing-a-student--edit)                                      | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                           |
+| [**Delete**](#deleting-a-module-delete_module)                            | `delete INDEX`<br> e.g., `delete 3`                                                                                                                                   |
+| [**Add Module**](#adding-a-module-add_module)                             | `add_module i/INDEX m/MODULE_CODE`<br> e.g., `add_module i/1 m/CS2103T`                                                                                               |
+| [**Delete Module**](#deleting-a-module-delete_module)                     | `delete_module i/INDEX m/MODULE_CODE`<br> e.g., `delete_module i/1 m/MA2001`                                                                                          |
+| [**Add Timing**](#adding-a-module-timing-add_timing)                      | `add_timing i/INDEX m/MODULE_CODE d/DAY st/START_TIME et/END_TIME`<br> e.g., `add_timing i/1 m/MA2001 d/Mon st/1200 et/1400`                                          |
+| [**Delete Timing**](#deleting-a-module-timing-delete_timing)              | `delete_timing i/INDEX m/MODULE_CODE d/DAY st/START_TIME et/END_TIME`<br> e.g., `delete_timing i/1 m/MA2001 d/Mon st/1200 et/1400`                                    |
+| [**Find**](#locating-students-by-name-find)                               | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                            |
+| [**Find Free Timing**](#find-friends-who-are-free-to-meet-find_free_time) | `find_free_time d/DAY st/START_TIME et/END_TIME`<br> e.g., `find_free_time d/Wed st/1500 et/1600`                                                                     |
+| [**List Modules**](#learn-more-about-modules-list_modules)                | `list_modules m/MODULE_CODE` <br> e.g. `list_modules m/cs21`                                                                                                          |
+| [**Search Module**](#find-friends-with-modules-module_search)             | `search m/MODULE_CODE` <br> e.g. `search m/CS2103T`                                                                                                                   |
+| [**Clear**](#clearing-all-entries--clear)                                 | `clear`                                                                                                                                                               |
+| [**Exit**](#exiting-the-program--exit)                                    | `exit`                                                                                                                                                                |
+|                                                                           |
