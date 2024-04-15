@@ -233,7 +233,7 @@ Type the following commands:
 
 ![Find Free Time](images/tutorial/find-free-time.png)
 
-This was a preview of some of the commands you can use in ModContacts. For a full list of commands with a detailed explanation, refer to the [Features](#Features) section and for a quick overview of all the commands available, you can look at the [Command Summary](#command-summary).
+This tutorial is **not exhaustive** and is just a preview of some of the commands you can use in ModContacts. For a full list of commands with a detailed explanation, refer to the [Features](#Features) section and for a quick overview of all the commands available, you can look at the [Command Summary](#command-summary).
 
 ---
 
@@ -686,14 +686,21 @@ Furthermore, certain edits can cause the ModContacts to behave in unexpected way
 
 # Command summary
 
-| Action                                                        | Format, Examples                                                                                                                                                      |
-| ------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**Add**](#adding-a-module-add_module)                        | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague` |
-| [**Clear**](#clearing-all-entries--clear)                     | `clear`                                                                                                                                                               |
-| [**Delete**](#deleting-a-module-delete_module)                | `delete INDEX`<br> e.g., `delete 3`                                                                                                                                   |
-| [**Edit**](#editing-a-student--edit)                          | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                           |
-| [**Find**](#locating-students-by-name-find)                   | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                            |
-| [**List**](#listing-all-students--list)                       | `list`                                                                                                                                                                |
-| **Help**                                                      | `help`                                                                                                                                                                |
-| [**List Modules**](#learn-more-about-modules-list_modules)    | `list_modules m/MODULE_CODE` <br> e.g. `list_modules m/cs21`                                                                                                          |
-| [**Search Module**](#find-friends-with-modules-module_search) | `search m/MODULE_CODE` <br> e.g. `search m/CS2103T`                                                                                                                   |
+| Action                                                                    | Format, Examples                                                                                                                                                      |
+| ------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Help**                                                                  | `help`                                                                                                                                                                |
+| [**Add**](#adding-a-module-add_module)                                    | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague` |
+| [**List**](#listing-all-students--list)                                   | `list`                                                                                                                                                                |
+| [**Edit**](#editing-a-student--edit)                                      | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                           |
+| [**Delete**](#deleting-a-module-delete_module)                            | `delete INDEX`<br> e.g., `delete 3`                                                                                                                                   |
+| [**Add Module**](#adding-a-module-add_module)                             | `add_module i/INDEX m/MODULE_CODE`<br> e.g., `add_module i/1 m/CS2103T`                                                                                               |
+| [**Delete Module**](#deleting-a-module-delete_module)                     | `delete_module i/INDEX m/MODULE_CODE`<br> e.g., `delete_module i/1 m/MA2001`                                                                                          |
+| [**Add Timing**](#adding-a-module-timing-add_timing)                      | `add_timing i/INDEX m/MODULE_CODE d/DAY st/START_TIME et/END_TIME`<br> e.g., `add_timing i/1 m/MA2001 d/Mon st/1200 et/1400`                                          |
+| [**Delete Timing**](#deleting-a-module-timing-delete_timing)              | `delete_timing i/INDEX m/MODULE_CODE d/DAY st/START_TIME et/END_TIME`<br> e.g., `delete_timing i/1 m/MA2001 d/Mon st/1200 et/1400`                                    |
+| [**Find**](#locating-students-by-name-find)                               | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                            |
+| [**Find Free Timing**](#find-friends-who-are-free-to-meet-find_free_time) | `find_free_time d/DAY st/START_TIME et/END_TIME`<br> e.g., `find_free_time d/Wed st/1500 et/1600`                                                                     |
+| [**List Modules**](#learn-more-about-modules-list_modules)                | `list_modules m/MODULE_CODE` <br> e.g. `list_modules m/cs21`                                                                                                          |
+| [**Search Module**](#find-friends-with-modules-module_search)             | `search m/MODULE_CODE` <br> e.g. `search m/CS2103T`                                                                                                                   |
+| [**Clear**](#clearing-all-entries--clear)                                 | `clear`                                                                                                                                                               |
+| [**Exit**](#exiting-the-program--exit)                                    | `exit`                                                                                                                                                                |
+|                                                                           |
