@@ -530,3 +530,6 @@ The `add` command currently requires the user to enter an email and address, whi
 ModContacts currently supports input in English. This will be extended to more languages in future versions.
 
 **Note**: Attempting to input text in another language may produce unpredicatble behaviour in the current version of the app, and is to be done at the user's risk.
+
+### Supporting names with special characters
+ModContacts currently supports names without any special characters. This will be extended to support common Singaporean names containing "S/O" or "D/O" in future versions.
