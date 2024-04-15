@@ -279,11 +279,22 @@ _{Explain here how the data archiving feature will be implemented}_
 
 ### Handling of Modules
 #### Proposed Implementation
-The implementation is facilitated by the `JsonModuleMapStorage`. This implements the `ModuleMapStorage`, an interface which defines functions to retrieve the module map from storage into Memory.
+ModContacts has a builtin list of all modules from NUS. This list is stored in a JSON file, which is embedded in the jar file.  The implementation is facilitated by the `JsonModuleMapStorage`. This implements the `ModuleMapStorage`, an interface which defines functions to retrieve the module map from storage into Memory. 
+
 - `JsonModuleMapStorage#readModuleMap`
 
 This operation is exposed in Storage as `ReadModuleMap`, which allows the `ModelManager` to populate its `ModuleMap` with data from the embedded file.
 With the model manager having the ModuleMap, this can now be accessed by the `Commands` in the `logic` package.
+
+#### Design Consideration
+The design considerations we had to make was on how to store the modules
+
+There were two ways of storing the modules in the application. 
+1. Store it within the addressbook.json, where the modules are stored as a list of modules, along-side the addressbook data. 
+2. Store it as a separate JSON file, and have the application read from it.
+Option 1 is easier to implement as it is just extending from the existing addressbook.json file, however, it would be harder to maintain as the addressbook.json file would be cluttered with module information. Option 2 is cleaner, but requires more work to implement. Not only that, any updates to the module list would require a new release of the application. 
+
+We decided to go with Option 2 for ergonomics reasons, as we wanted to keep the addressbook.json file clean and easy to read. Not only that, it prevents the users from accidentally editting the module information. 
 
 ### Handling of Student Module Allocation
 #### Proposed Implementation

@@ -22,6 +22,11 @@ Class JsonAdaptedStudent
 Class JsonAdaptedTag
 }
 
+package "ModuleMap Storage" #F4F6F6 {
+Class "<<interface>>\nModuleMapStorage" as ModuleMapStorage
+Class JsonModuleMapStorage
+}
+
 }
 
 Class HiddenOutside #FFFFFF
@@ -33,11 +38,15 @@ StorageManager -up-> "1" AddressBookStorage
 
 Storage -left-|> UserPrefsStorage
 Storage -right-|> AddressBookStorage
+Storage -right-|> ModuleMapStorage
 
 JsonUserPrefsStorage .up.|> UserPrefsStorage
 JsonAddressBookStorage .up.|> AddressBookStorage
 JsonAddressBookStorage ..> JsonSerializableAddressBook
 JsonSerializableAddressBook --> "*" JsonAdaptedStudent
 JsonAdaptedStudent --> "*" JsonAdaptedTag
+
+JsonModuleMapStorage .up.|> ModuleMapStorage
+
 
 @enduml
