@@ -194,6 +194,7 @@ Be careful! This will delete all contacts from ModContacts. Since we don't have 
 You should see something like this
 ![Clear Contacts](images/tutorial/clear.png)
 
+{:start="2"}
 2. We just had a chat with our friend Taufiq, and found out that he is taking the modules `CS2103T` and `CS20?` next semester. You remember that it's the Data Structures module but don't remember the exact module code. Firstly, lets add him to our contacts list. Since he Rock Climbs, lets add these details as tags into the application.
 
   Taufiq's Details:
@@ -214,12 +215,14 @@ You should see something like this
 
 ![Add a Friend](images/tutorial/add.png)
 
+{:start="3"}
 3. We can now add the module `CS2103T` to Taufiq's list of modules. We'll use the command `add_module i/1 m/CS2103T` to add the module to Taufiq's list of modules.
 
 The `1` in the above command refers to the index of the friend in the list. Since Taufiq is the first friend in the list, he is at index 1.
 
 ![Add a Module](images/tutorial/add-module.png)
 
+{:start="4"}
 4. Now, since we're unsure which module Taufiq is taking, we can use the `list_modules` command to search for the module. We'll use the command `list_modules m/CS20` to search for modules starting with `CS20`.
 
 ![List Modules](images/tutorial/list-modules.png)
@@ -228,6 +231,7 @@ From this, we can read the descriptions and find out that the module we're looki
 
 Do note that if you try to add the same module again to the same person, it will give a warning that the module is already added.
 
+{:start="5"}
 5.  Suppose you want to add the timing `1600h – 1800h` on Wednesday and `1400h - 1600h` on Thursday to the `CS2103T` and `0800h - 1000h` on Wednesday to the `CS2040S`  module Taufiq.
 
 Type the following commands:
@@ -237,10 +241,12 @@ Type the following commands:
 
 ![Add Timing](images/tutorial/add-timing.png)
 
+{:start="6"}
 6. Now, using the above commands, we can add the rest of our friends, their modules and its timings. You can use the `list` command to see the entire list of friends in the application
 
 ![List](images/tutorial/list.png)
 
+{:start="7"}
 7. Suppose that you're looking for friends to eat lunch with on Wednesday from `1200 - 1400`. With the command `find_free_time d/Wed st/1200 et/1400`, you can find friends who are free during that period.
 
 ![Find Free Time](images/tutorial/find-free-time.png)
@@ -337,7 +343,7 @@ Suppose you want to edit a friend's name (Like _John Doe_ who we added in this [
 Let's change his name from `John Doe` to `Johnathan Doe`.
 
 Type the following command:
-`edit i/1 n/Johnathan Doe`
+`edit 1 n/Johnathan Doe`
 
 ![](images/user-guide/edit/example.png)
 
