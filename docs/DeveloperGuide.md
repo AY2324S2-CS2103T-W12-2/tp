@@ -343,8 +343,6 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `*`      | thoughtful student | save the pronunciation of my friend's names              | know the proper way to say their names             |
 | `*`      | student            | share my profile with a QR code/email/telegram           | share my contact details with my friends           |
 
-*{More to be added}*
-
 ### Use cases
 
 (For all use cases below, the **System** is `ModContacts` and the **Actor** is the `student`, unless specified otherwise)
@@ -463,12 +461,11 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Non-Functional Requirements
 
-1.  Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
+1.  Should work on any [_mainstream OS_](#glossary) as long as it has Java `11` or above installed.
 2.  Should be able to hold up to 100 students without a noticeable sluggishness in performance for typical usage.
-3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
-4.  The user interface should be intuitive enough for users who are not IT-savvy
-
-*{More to be added}*
+3.  All commands should execute within 1000 milliseconds.
+4.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+5.  The user interface should be intuitive enough for users who are not IT-savvy
 
 ### Glossary
 
@@ -494,16 +491,19 @@ testers are expected to do more *exploratory* testing.
 
    1. Download the jar file and copy into an empty folder
 
-   1. Double-click the jar file Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
+   2. Opening the app:
+      1. **If you are using Windows:** Simply double-click on `modcontacts.jar` within your file explorer and a GUI similar to what is shown below should appear!
+      2. **If you are using MacOS / Linux:** Open a terminal window. Navigate to the folder containing `modcontacts.jar` using the `cd [relative/absolute folder path]` command. Then run `java -jar modcontacts.jar`.
 
-1. Saving window preferences
+For a more comprehensive quick start guide, refer to the [quick start section in our User Guide.](UserGuide/#quick-start)
+
+2. Saving window preferences
 
    1. Resize the window to an optimum size. Move the window to a different location. Close the window.
 
-   1. Re-launch the app by double-clicking the jar file.<br>
+   2. Re-launch the app by double-clicking the jar file.<br>
        Expected: The most recent window size and location is retained.
 
-1. _{ more test cases …​ }_
 
 ### Deleting a student
 
