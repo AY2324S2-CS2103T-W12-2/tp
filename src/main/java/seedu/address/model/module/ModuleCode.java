@@ -8,15 +8,17 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
  * Guarantees: immutable; is valid as declared in {@link #isValidCode(String)}
  */
 public class ModuleCode {
-    public static final String MESSAGE_CONSTRAINTS =
-            "Module code %s should follow the module format, and it should not be blank";
+    public static final String MESSAGE_CONSTRAINTS = "Module code %s should follow the module format, and it should not"
+            + "be blank.\n"
+            + "Valid module codes can be found through the list_modules command. Refer to the list_modules \n"
+            + "section in the User Guide to learn more";
 
     public static final String VALIDATION_REGEX = "[a-zA-Z]{2,4}[0-9]{4}[a-zA-Z0-9]{0,5}";
     private final String code;
 
-
     /**
      * Constructs a {@code ModuleCode}.
+     *
      * @param code
      */
     public ModuleCode(String code) {
