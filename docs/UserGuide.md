@@ -590,8 +590,15 @@ Furthermore, certain edits can cause the ModContacts to behave in unexpected way
 
 ---
 # Glossary
-TODO: Insert terms for prefix, command, CLI, GUI, Field, SoC, NUS
----
+| Glossary Term | Definition                                                                                          |
+| ------------- | --------------------------------------------------------------------------------------------------- |
+| CLI           | Command Line Interface, the text-based interface for interacting with ModContacts.                  |
+| GUI           | Graphical User Interface, the visual interface for interacting with ModContacts.                    |
+| Command       | The instruction given to ModContacts to perform a specific action.                                  |
+| Prefix        | A 1 character keyword, such as `m/`, `i/` that is used to specify the type of data for the command. |
+| NUS           | National University of Singapore, the university that ModContacts is designed for.                  |
+| SoC           | School of Computing, the faculty in NUS that ModContacts is designed for.                           |
+--------------------------------------------------------------------------------------------------------------------
 
 ## Known issues
 
