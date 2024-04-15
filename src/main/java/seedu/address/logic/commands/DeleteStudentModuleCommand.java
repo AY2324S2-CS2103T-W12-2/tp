@@ -23,7 +23,7 @@ public class DeleteStudentModuleCommand extends Command {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Deletes a module from a student in the address book. "
             + "Parameters: "
-            + PREFIX_STUDENT_ID + "STUDENT ID"
+            + PREFIX_STUDENT_ID + "STUDENT ID "
             + PREFIX_MODULE_CODE + "MODULE CODE";
 
     public static final String MESSAGE_SUCCESS = "Module %1$s deleted from student: %2$s";
