@@ -197,12 +197,12 @@ You should see something like this
   Taufiq's Details: 
 
   | Field   | Value                      |
-  | ------- | -------------------------- |
+  | ------- |----------------------------|
   | Name    | Taufiq Mohammed            |
   | Phone   | 98765432                   |
   | Email   | taufiq@taufiq.com          |
   | Address | 123, Clementi Road, 123456 |
-  | Tags    | Friend, RockClimbing       |
+  | Tags    | friend, rockClimbing       |
 
   With this details, we'll run the command 
   ```bash
