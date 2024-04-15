@@ -9,13 +9,16 @@ import static seedu.address.testutil.TypicalStudents.ALICE;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Arrays;
 import java.util.function.Predicate;
 
 import org.junit.jupiter.api.Test;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import seedu.address.commons.core.GuiSettings;
+import seedu.address.commons.core.index.Index;
 import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.AddressBook;
@@ -27,6 +30,7 @@ import seedu.address.model.module.ModuleMap;
 import seedu.address.model.module.ModuleTiming;
 import seedu.address.model.student.Student;
 import seedu.address.testutil.StudentBuilder;
+import seedu.address.testutil.TypicalStudents;
 
 public class AddCommandTest {
 
@@ -85,6 +89,31 @@ public class AddCommandTest {
         AddCommand addCommand = new AddCommand(ALICE);
         String expected = AddCommand.class.getCanonicalName() + "{toAdd=" + ALICE + "}";
         assertEquals(expected, addCommand.toString());
+    }
+
+    @Test
+    public void execute_moduleTimingClash_throwsCommandException() {
+        Student validStudentWithModuleTimings = new StudentBuilder().withModuleTimings(TypicalStudents.getTypicalModuleTimings()).build();
+        ModuleTiming clashTiming = TypicalStudents.getTypicalModuleTimings().get(0);
+        ModelStubAcceptingStudentAdded modelStub = new ModelStubAcceptingStudentAdded() {
+            @Override
+            public boolean doesStudentModuleTimingClash(Student s, ModuleTiming t) {
+                return true;
+            }
+
+            @Override
+            public ObservableList<Student> getFilteredStudentList() {
+                return FXCollections.observableList(TypicalStudents.getTypicalStudents());
+            }
+
+            @Override
+            public boolean doesStudentHaveModule(Student s, ModuleCode m) {
+                return true;
+            }
+        };
+        modelStub.addStudent(validStudentWithModuleTimings);
+        AddStudentModuleTimingCommand addCommand = new AddStudentModuleTimingCommand(Index.fromZeroBased(0), new ModuleCode("CS2103T"), clashTiming);
+        assertThrows(CommandException.class, AddStudentModuleTimingCommand.MESSAGE_MODULE_TIMING_CLASH, () -> addCommand.execute(modelStub));
     }
 
     /**
