@@ -2,13 +2,9 @@
 layout: page
 title: Developer Guide
 ---
-* Table of Contents
-- [Acknowledgements](#acknowledgements)
-- [Setting Up](#setting-up)
-- [Design](#design)
-- [Implementation](#implementation)
-- [Misc. Docs](#misc-documentation)
-- [Appendix](#appendix)
+# Table of Contents
+* TOC
+{:toc}
 
 --------------------------------------------------------------------------------------------------------------------
 
