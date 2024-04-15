@@ -189,7 +189,7 @@ Adds a friend to the mod contacts list.
 Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​`
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-A friend can have any number of tags (including 0)
+A friend can have any number of tags (including 0). Tags only accept alphanumeric values and do not include whitespaces. You can use capitalization such as <a href="#glossary">camel casing</a> to distinguish different words in a tag.
 </div>
 
 Examples:
@@ -611,6 +611,7 @@ Furthermore, certain edits can cause the ModContacts to behave in unexpected way
 | NUS           | National University of Singapore, the university that ModContacts is designed for.                                          |
 | SoC           | School of Computing, the faculty in NUS that ModContacts is designed for.                                                   |
 | field         | A piece of information that can be added to a command. e.g. `n/John Doe` has the field John Doe, with the prefix `n/`.      |
+| camel casing   | A casing format where words are not separated by whitespaces. Words are joined together and the first letter of each word, except the first one, is capital. Example: "thisIsCamelCasing" is "this is camel casing" in camel casing.
 --------------------------------------------------------------------------------------------------------------------
 
 ## Known issues
